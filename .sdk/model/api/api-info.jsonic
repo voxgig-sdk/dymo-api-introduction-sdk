@@ -1,0 +1,24 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      contact: {
+        name: "Dymo API Support"
+        url: "https://tpe.li/D-DMAPI"
+      }
+      description: "The Dymo API provides a comprehensive solution for businesses by integrating security, AI, marketing, and analytics into a single platform. It allows users to validate data, detect malicious activity, and enhance marketing strategies while gaining insights into customer behavior."
+      servers: [
+        {
+          description: "Production server"
+          url: "https://api.dymo.com/v1"
+        }
+      ]
+      title: "Dymo API"
+      version: "1.0.0"
+    }
+  }
+}
+
+}

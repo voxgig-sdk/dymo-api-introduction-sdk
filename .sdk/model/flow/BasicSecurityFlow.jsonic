@@ -1,0 +1,18 @@
+# BasicSecurityFlow
+
+main: kit: flow: BasicSecurityFlow:
+{
+  entity: "security",
+  kind: "basic",
+  name: "BasicSecurityFlow",
+  step: [
+    {
+      input: {
+        ref: "security_ref01"
+      }
+
+      op: "create"
+    }
+  ],
+  "key$": "BasicSecurityFlow"
+}

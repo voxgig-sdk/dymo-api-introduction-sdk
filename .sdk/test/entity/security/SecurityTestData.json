@@ -1,0 +1,54 @@
+{
+  "existing": {
+    "security": {
+      "SECURITY00": {
+        "ai_insight": {},
+        "analytics": {},
+        "data": {},
+        "enable_ai": false,
+        "marketing_insight": {},
+        "status": "s5f",
+        "timestamp": "s60",
+        "validation_result": {},
+        "validation_type": "s62"
+      },
+      "SECURITY01": {
+        "ai_insight": {},
+        "analytics": {},
+        "data": {},
+        "enable_ai": false,
+        "marketing_insight": {},
+        "status": "sb9",
+        "timestamp": "sba",
+        "validation_result": {},
+        "validation_type": "sbc"
+      },
+      "SECURITY02": {
+        "ai_insight": {},
+        "analytics": {},
+        "data": {},
+        "enable_ai": false,
+        "marketing_insight": {},
+        "status": "s113",
+        "timestamp": "s114",
+        "validation_result": {},
+        "validation_type": "s116"
+      }
+    }
+  },
+  "new": {
+    "security": {
+      "security_ref01": {
+        "ai_insight": {},
+        "analytics": {},
+        "data": {},
+        "enable_ai": false,
+        "marketing_insight": {},
+        "status": "s16d",
+        "timestamp": "s16e",
+        "validation_result": {},
+        "validation_type": "s170"
+      }
+    }
+  }
+}

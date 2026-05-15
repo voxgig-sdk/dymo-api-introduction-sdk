@@ -1,0 +1,77 @@
+# Entity: security
+
+main: kit: entity: security: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "ai_insight"
+      req: false
+      type: "`$OBJECT`"
+    }
+    {
+      name: "analytics"
+      req: false
+      type: "`$OBJECT`"
+    }
+    {
+      name: "data"
+      req: true
+      type: "`$OBJECT`"
+    }
+    {
+      name: "enable_ai"
+      req: false
+      type: "`$BOOLEAN`"
+    }
+    {
+      name: "marketing_insight"
+      req: false
+      type: "`$OBJECT`"
+    }
+    {
+      name: "status"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "timestamp"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "validation_result"
+      req: false
+      type: "`$OBJECT`"
+    }
+    {
+      name: "validation_type"
+      req: false
+      type: "`$STRING`"
+    }
+  ]
+
+  name: "security"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          method: "POST"
+          orig: "/validate"
+          parts: [
+            "validate"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

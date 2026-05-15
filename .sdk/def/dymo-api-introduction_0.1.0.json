@@ -1,0 +1,387 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Dymo API",
+    "description": "The Dymo API provides a comprehensive solution for businesses by integrating security, AI, marketing, and analytics into a single platform. It allows users to validate data, detect malicious activity, and enhance marketing strategies while gaining insights into customer behavior.",
+    "version": "1.0.0",
+    "contact": {
+      "name": "Dymo API Support",
+      "url": "https://tpe.li/D-DMAPI"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://api.dymo.com/v1",
+      "description": "Production server"
+    }
+  ],
+  "paths": {
+    "/validate": {
+      "post": {
+        "summary": "Validate data and detect malicious activity",
+        "description": "Validates input data, detects malicious activity, and provides security analysis with AI-powered insights",
+        "operationId": "validateData",
+        "tags": [
+          "Security",
+          "Validation"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "object",
+                    "description": "The data to be validated",
+                    "additionalProperties": true
+                  },
+                  "validationType": {
+                    "type": "string",
+                    "description": "Type of validation to perform",
+                    "enum": [
+                      "security",
+                      "marketing",
+                      "analytics",
+                      "all"
+                    ]
+                  },
+                  "enableAI": {
+                    "type": "boolean",
+                    "description": "Enable AI-powered analysis",
+                    "default": true
+                  }
+                },
+                "required": [
+                  "data"
+                ]
+              },
+              "examples": {
+                "securityValidation": {
+                  "summary": "Security validation example",
+                  "value": {
+                    "data": {
+                      "email": "user@example.com",
+                      "ipAddress": "192.168.1.1"
+                    },
+                    "validationType": "security",
+                    "enableAI": true
+                  }
+                },
+                "marketingValidation": {
+                  "summary": "Marketing validation example",
+                  "value": {
+                    "data": {
+                      "customerEmail": "customer@example.com",
+                      "campaignId": "CAMP123"
+                    },
+                    "validationType": "marketing",
+                    "enableAI": true
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Validation successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "description": "Validation status",
+                      "enum": [
+                        "valid",
+                        "invalid",
+                        "suspicious"
+                      ]
+                    },
+                    "validationResults": {
+                      "type": "object",
+                      "properties": {
+                        "isValid": {
+                          "type": "boolean",
+                          "description": "Whether the data passed validation"
+                        },
+                        "securityScore": {
+                          "type": "number",
+                          "description": "Security score from 0-100",
+                          "minimum": 0,
+                          "maximum": 100
+                        },
+                        "threats": {
+                          "type": "array",
+                          "description": "List of detected threats",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "type": {
+                                "type": "string",
+                                "description": "Type of threat detected"
+                              },
+                              "severity": {
+                                "type": "string",
+                                "enum": [
+                                  "low",
+                                  "medium",
+                                  "high",
+                                  "critical"
+                                ]
+                              },
+                              "description": {
+                                "type": "string",
+                                "description": "Detailed description of the threat"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "aiInsights": {
+                      "type": "object",
+                      "description": "AI-powered insights and recommendations",
+                      "properties": {
+                        "recommendations": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "patterns": {
+                          "type": "array",
+                          "description": "Detected patterns in the data",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "confidence": {
+                          "type": "number",
+                          "description": "Confidence score of AI analysis",
+                          "minimum": 0,
+                          "maximum": 1
+                        }
+                      }
+                    },
+                    "marketingInsights": {
+                      "type": "object",
+                      "description": "Marketing-related insights",
+                      "properties": {
+                        "customerSegment": {
+                          "type": "string"
+                        },
+                        "engagementScore": {
+                          "type": "number",
+                          "minimum": 0,
+                          "maximum": 100
+                        },
+                        "recommendations": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    },
+                    "analytics": {
+                      "type": "object",
+                      "description": "Analytics data and customer behavior insights",
+                      "properties": {
+                        "behaviorProfile": {
+                          "type": "object",
+                          "additionalProperties": true
+                        },
+                        "metrics": {
+                          "type": "object",
+                          "additionalProperties": {
+                            "type": "number"
+                          }
+                        }
+                      }
+                    },
+                    "timestamp": {
+                      "type": "string",
+                      "format": "date-time",
+                      "description": "Timestamp of the validation"
+                    }
+                  }
+                },
+                "examples": {
+                  "validResponse": {
+                    "summary": "Valid data response",
+                    "value": {
+                      "status": "valid",
+                      "validationResults": {
+                        "isValid": true,
+                        "securityScore": 95,
+                        "threats": []
+                      },
+                      "aiInsights": {
+                        "recommendations": [
+                          "Data appears legitimate",
+                          "No suspicious patterns detected"
+                        ],
+                        "patterns": [],
+                        "confidence": 0.95
+                      },
+                      "marketingInsights": {
+                        "customerSegment": "high-value",
+                        "engagementScore": 85,
+                        "recommendations": [
+                          "Target with premium offerings"
+                        ]
+                      },
+                      "analytics": {
+                        "behaviorProfile": {
+                          "activeUser": true,
+                          "purchaseFrequency": "high"
+                        },
+                        "metrics": {
+                          "lifetimeValue": 1500
+                        }
+                      },
+                      "timestamp": "2024-01-15T10:30:00Z"
+                    }
+                  },
+                  "suspiciousResponse": {
+                    "summary": "Suspicious data response",
+                    "value": {
+                      "status": "suspicious",
+                      "validationResults": {
+                        "isValid": false,
+                        "securityScore": 35,
+                        "threats": [
+                          {
+                            "type": "malicious_ip",
+                            "severity": "high",
+                            "description": "IP address associated with known malicious activity"
+                          }
+                        ]
+                      },
+                      "aiInsights": {
+                        "recommendations": [
+                          "Block this request",
+                          "Monitor for similar patterns"
+                        ],
+                        "patterns": [
+                          "bot-like behavior"
+                        ],
+                        "confidence": 0.89
+                      },
+                      "timestamp": "2024-01-15T10:30:00Z"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request - Invalid input data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Invalid or missing API key",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too many requests - Rate limit exceeded",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Error": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "object",
+            "properties": {
+              "code": {
+                "type": "string",
+                "description": "Error code"
+              },
+              "message": {
+                "type": "string",
+                "description": "Error message"
+              },
+              "details": {
+                "type": "string",
+                "description": "Additional error details"
+              }
+            },
+            "required": [
+              "code",
+              "message"
+            ]
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "ApiKeyAuth": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-API-Key",
+        "description": "API key for authentication. Contact support to obtain your API key."
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Security",
+      "description": "Security and threat detection operations"
+    },
+    {
+      "name": "Validation",
+      "description": "Data validation operations"
+    },
+    {
+      "name": "Marketing",
+      "description": "Marketing insights and analytics"
+    },
+    {
+      "name": "Analytics",
+      "description": "Customer behavior analytics"
+    }
+  ]
+}
