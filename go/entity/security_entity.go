@@ -1,9 +1,9 @@
 package entity
 
 import (
-	"github.com/voxgig-sdk/dymo-api-introduction-sdk/core"
+	"github.com/voxgig-sdk/dymo-api-introduction-sdk/go/core"
 
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/dymo-api-introduction-sdk/go/utility/struct"
 )
 
 type SecurityEntity struct {

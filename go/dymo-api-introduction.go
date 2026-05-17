@@ -1,10 +1,10 @@
 package voxgigdymoapiintroductionsdk
 
 import (
-	"github.com/voxgig-sdk/dymo-api-introduction-sdk/core"
-	"github.com/voxgig-sdk/dymo-api-introduction-sdk/entity"
-	"github.com/voxgig-sdk/dymo-api-introduction-sdk/feature"
-	_ "github.com/voxgig-sdk/dymo-api-introduction-sdk/utility"
+	"github.com/voxgig-sdk/dymo-api-introduction-sdk/go/core"
+	"github.com/voxgig-sdk/dymo-api-introduction-sdk/go/entity"
+	"github.com/voxgig-sdk/dymo-api-introduction-sdk/go/feature"
+	_ "github.com/voxgig-sdk/dymo-api-introduction-sdk/go/utility"
 )
 
 // Type aliases preserve external API.

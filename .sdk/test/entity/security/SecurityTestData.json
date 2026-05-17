@@ -10,7 +10,8 @@
         "status": "s5f",
         "timestamp": "s60",
         "validation_result": {},
-        "validation_type": "s62"
+        "validation_type": "s62",
+        "id": "SECURITY00"
       },
       "SECURITY01": {
         "ai_insight": {},
@@ -21,7 +22,8 @@
         "status": "sb9",
         "timestamp": "sba",
         "validation_result": {},
-        "validation_type": "sbc"
+        "validation_type": "sbc",
+        "id": "SECURITY01"
       },
       "SECURITY02": {
         "ai_insight": {},
@@ -32,7 +34,8 @@
         "status": "s113",
         "timestamp": "s114",
         "validation_result": {},
-        "validation_type": "s116"
+        "validation_type": "s116",
+        "id": "SECURITY02"
       }
     }
   },
