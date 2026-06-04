@@ -80,7 +80,6 @@ function security_basic_setup($extra)
         "DYMOAPIINTRODUCTION_TEST_SECURITY_ENTID" => $idmap,
         "DYMOAPIINTRODUCTION_TEST_LIVE" => "FALSE",
         "DYMOAPIINTRODUCTION_TEST_EXPLAIN" => "FALSE",
-        "DYMOAPIINTRODUCTION_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -92,7 +91,6 @@ function security_basic_setup($extra)
     if ($env["DYMOAPIINTRODUCTION_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
-                "apikey" => $env["DYMOAPIINTRODUCTION_APIKEY"],
             ],
             $extra ?? [],
         ]);

@@ -17,7 +17,15 @@
           }
         ],
         "title": "Dymo API",
-        "version": "1.0.0"
+        "version": "1.0.0",
+        "tagline": "All-in-one validation and fraud-detection API covering email, phone, IP, IBAN, crypto wallet, URL and credit card data",
+        "homepage": "https://dymo.tpeoficial.com/products/dymo-api",
+        "docs_url": "https://docs.tpeoficial.com/docs/dymo-api/getting-started/introduction",
+        "about_md": "Dymo API is a data-validation and security gateway built by [TPEOficial](https://dymo.tpeoficial.com/). It bundles several checks normally spread across separate services into a single HTTP API aimed at signup flows, CRMs and marketing platforms that need to keep junk and malicious users out.\n\nWhat you can do with the API:\n\n- Verify whether an email address is deliverable, disposable or suspicious (domain database + AI matching).\n- Validate phone numbers and flag fraud or invalid formats.\n- Score IP addresses for VPN/proxy/suspicious origin.\n- Validate other identifiers: cryptocurrency wallets, domains/URLs, credit cards, user agents and IBANs.\n- Password-strength validation via a public endpoint.\n\nThe API has a public branch (no token required) and a private branch that needs an API key issued from a Dymo account. Note: this is the TPEOficial \"Dymo\" data-validation API and is unrelated to the Dymo label-printer products from Newell Brands.",
+        "entity_desc": {
+          "security": "Data-validation and fraud-detection operations covering email, phone, IP, crypto wallet, domain/URL, credit card, user agent, IBAN and password strength."
+        },
+        "auth": false
       },
       "config": {
         "auth": {
@@ -25,7 +33,15 @@
         },
         "headers": {
           "content-type": "application/json"
-        }
+        },
+        "docs_order": [
+          "ts",
+          "py",
+          "php",
+          "go",
+          "rb",
+          "lua"
+        ]
       },
       "entity": {
         "security": {

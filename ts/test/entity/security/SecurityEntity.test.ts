@@ -113,7 +113,6 @@ function basicSetup(extra?: any) {
     'DYMO_API_INTRODUCTION_TEST_SECURITY_ENTID': idmap,
     'DYMO_API_INTRODUCTION_TEST_LIVE': 'FALSE',
     'DYMO_API_INTRODUCTION_TEST_EXPLAIN': 'FALSE',
-    'DYMO_API_INTRODUCTION_APIKEY': 'NONE',
   })
 
   idmap = env['DYMO_API_INTRODUCTION_TEST_SECURITY_ENTID']
@@ -123,7 +122,6 @@ function basicSetup(extra?: any) {
   if (live) {
     client = new DymoApiIntroductionSDK(merge([
       {
-        apikey: env.DYMO_API_INTRODUCTION_APIKEY,
       },
       extra
     ]))

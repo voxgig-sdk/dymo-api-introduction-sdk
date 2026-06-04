@@ -20,9 +20,6 @@ class DymoApiIntroductionConfig
             ],
             "options" => [
                 "base" => "https://api.dymo.com/v1",
-                "auth" => [
-                    "prefix" => "Bearer",
-                ],
                 "headers" => [
           'content-type' => 'application/json',
         ],

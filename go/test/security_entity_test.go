@@ -110,7 +110,6 @@ func securityBasicSetup(extra map[string]any) *entityTestSetup {
 		"DYMOAPIINTRODUCTION_TEST_SECURITY_ENTID": idmap,
 		"DYMOAPIINTRODUCTION_TEST_LIVE":      "FALSE",
 		"DYMOAPIINTRODUCTION_TEST_EXPLAIN":   "FALSE",
-		"DYMOAPIINTRODUCTION_APIKEY":         "NONE",
 	})
 
 	idmapResolved := core.ToMapAny(env["DYMOAPIINTRODUCTION_TEST_SECURITY_ENTID"])
@@ -121,7 +120,6 @@ func securityBasicSetup(extra map[string]any) *entityTestSetup {
 	if env["DYMOAPIINTRODUCTION_TEST_LIVE"] == "TRUE" {
 		mergedOpts := vs.Merge([]any{
 			map[string]any{
-				"apikey": env["DYMOAPIINTRODUCTION_APIKEY"],
 			},
 			extra,
 		})
