@@ -10,7 +10,7 @@ The Python SDK for the DymoApiIntroduction API — an entity-oriented client fol
 
 ## Install
 ```bash
-pip install dymo-api-introduction-sdk
+pip install voxgig-sdk-dymo-api-introduction
 ```
 
 Or install from source:

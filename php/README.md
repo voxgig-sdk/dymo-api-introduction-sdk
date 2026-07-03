@@ -10,7 +10,7 @@ The PHP SDK for the DymoApiIntroduction API — an entity-oriented client using 
 
 ## Install
 ```bash
-composer require voxgig/dymo-api-introduction-sdk
+composer require voxgig-sdk/dymo-api-introduction
 ```
 
 

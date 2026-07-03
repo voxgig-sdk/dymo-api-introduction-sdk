@@ -10,7 +10,7 @@ The TypeScript SDK for the DymoApiIntroduction API — a type-safe, entity-orien
 
 ## Install
 ```bash
-npm install dymo-api-introduction
+npm install @voxgig-sdk/dymo-api-introduction
 ```
 ## Tutorial: your first API call
 

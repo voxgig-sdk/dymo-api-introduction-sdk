@@ -10,13 +10,13 @@ The Ruby SDK for the DymoApiIntroduction API — an entity-oriented client using
 
 ## Install
 ```bash
-gem install dymo-api-introduction-sdk
+gem install voxgig-sdk-dymo-api-introduction
 ```
 
 Or add to your `Gemfile`:
 
 ```ruby
-gem "dymo-api-introduction-sdk"
+gem "voxgig-sdk-dymo-api-introduction"
 ```
 
 Then run:

@@ -10,7 +10,7 @@ The Lua SDK for the DymoApiIntroduction API — an entity-oriented client using 
 
 ## Install
 ```bash
-luarocks install dymo-api-introduction-sdk
+luarocks install voxgig-sdk-dymo-api-introduction
 ```
 
 If the module is not yet published, add the source directory to
