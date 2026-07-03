@@ -86,6 +86,7 @@ function security_basic_setup(extra)
     ["DYMOAPIINTRODUCTION_TEST_SECURITY_ENTID"] = idmap,
     ["DYMOAPIINTRODUCTION_TEST_LIVE"] = "FALSE",
     ["DYMOAPIINTRODUCTION_TEST_EXPLAIN"] = "FALSE",
+    ["DYMOAPIINTRODUCTION_APIKEY"] = "NONE",
   })
 
   local idmap_resolved = helpers.to_map(
@@ -97,6 +98,7 @@ function security_basic_setup(extra)
   if env["DYMOAPIINTRODUCTION_TEST_LIVE"] == "TRUE" then
     local merged_opts = vs.merge({
       {
+        apikey = env["DYMOAPIINTRODUCTION_APIKEY"],
       },
       extra or {},
     })

@@ -1,22 +1,8 @@
 # DymoApiIntroduction SDK
 
-All-in-one validation and fraud-detection API covering email, phone, IP, IBAN, crypto wallet, URL and credit card data
+Dymo API client, generated from the OpenAPI spec.
 
 > TypeScript, Python, PHP, Golang, Ruby, Lua SDKs, a CLI, an interactive REPL, and an MCP server for AI agents — all generated from one OpenAPI spec by [@voxgig/sdkgen](https://github.com/voxgig/sdkgen).
-
-## About Dymo API
-
-Dymo API is a data-validation and security gateway built by [TPEOficial](https://dymo.tpeoficial.com/). It bundles several checks normally spread across separate services into a single HTTP API aimed at signup flows, CRMs and marketing platforms that need to keep junk and malicious users out.
-
-What you can do with the API:
-
-- Verify whether an email address is deliverable, disposable or suspicious (domain database + AI matching).
-- Validate phone numbers and flag fraud or invalid formats.
-- Score IP addresses for VPN/proxy/suspicious origin.
-- Validate other identifiers: cryptocurrency wallets, domains/URLs, credit cards, user agents and IBANs.
-- Password-strength validation via a public endpoint.
-
-The API has a public branch (no token required) and a private branch that needs an API key issued from a Dymo account. Note: this is the TPEOficial "Dymo" data-validation API and is unrelated to the Dymo label-printer products from Newell Brands.
 
 ## Try it
 
@@ -50,27 +36,28 @@ gem install dymo-api-introduction-sdk
 luarocks install dymo-api-introduction-sdk
 ```
 
-## 30-second quickstart
+## Quickstart
 
 ### TypeScript
 
 ```ts
 import { DymoApiIntroductionSDK } from 'dymo-api-introduction'
 
-const client = new DymoApiIntroductionSDK({})
+const client = new DymoApiIntroductionSDK({
+  apikey: process.env.DYMO-API-INTRODUCTION_APIKEY,
+})
 
 ```
 
-See the [TypeScript README](ts/README.md) for the
-full guide, or scroll down for the same example in other languages.
+See the [TypeScript README](ts/README.md) for the full guide.
 
-## What's in the box
+## Surfaces
 
-| Surface | Use it for | Path |
-| --- | --- | --- |
-| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | App integration | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
-| **CLI** | Scripts, CI, ops, one-off API calls | `go-cli/` |
-| **MCP server** | AI agents (Claude, Cursor, Cline) | `go-mcp/` |
+| Surface | Path |
+| --- | --- |
+| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
+| **CLI** | `go-cli/` |
+| **MCP server** | `go-mcp/` |
 
 ## Use it from an AI agent (MCP)
 
@@ -100,7 +87,7 @@ The API exposes one entity:
 
 | Entity | Description | API path |
 | --- | --- | --- |
-| **Security** | Data-validation and fraud-detection operations covering email, phone, IP, crypto wallet, domain/URL, credit card, user agent, IBAN and password strength. | `/validate` |
+| **Security** |  | `/validate` |
 
 Each entity supports the following operations where available: **load**,
 **list**, **create**, **update**, and **remove**.
@@ -110,9 +97,12 @@ Each entity supports the following operations where available: **load**,
 ### Python
 
 ```python
+import os
 from dymoapiintroduction_sdk import DymoApiIntroductionSDK
 
-client = DymoApiIntroductionSDK({})
+client = DymoApiIntroductionSDK({
+    "apikey": os.environ.get("DYMO-API-INTRODUCTION_APIKEY"),
+})
 
 ```
 
@@ -122,7 +112,9 @@ client = DymoApiIntroductionSDK({})
 <?php
 require_once 'dymoapiintroduction_sdk.php';
 
-$client = new DymoApiIntroductionSDK([]);
+$client = new DymoApiIntroductionSDK([
+    "apikey" => getenv("DYMO-API-INTRODUCTION_APIKEY"),
+]);
 
 ```
 
@@ -131,7 +123,9 @@ $client = new DymoApiIntroductionSDK([]);
 ```go
 import sdk "github.com/voxgig-sdk/dymo-api-introduction-sdk/go"
 
-client := sdk.NewDymoApiIntroductionSDK(map[string]any{})
+client := sdk.NewDymoApiIntroductionSDK(map[string]any{
+    "apikey": os.Getenv("DYMO-API-INTRODUCTION_APIKEY"),
+})
 
 ```
 
@@ -140,7 +134,9 @@ client := sdk.NewDymoApiIntroductionSDK(map[string]any{})
 ```ruby
 require_relative "DymoApiIntroduction_sdk"
 
-client = DymoApiIntroductionSDK.new({})
+client = DymoApiIntroductionSDK.new({
+  "apikey" => ENV["DYMO-API-INTRODUCTION_APIKEY"],
+})
 
 ```
 
@@ -149,7 +145,9 @@ client = DymoApiIntroductionSDK.new({})
 ```lua
 local sdk = require("dymo-api-introduction_sdk")
 
-local client = sdk.new({})
+local client = sdk.new({
+  apikey = os.getenv("DYMO-API-INTRODUCTION_APIKEY"),
+})
 
 ```
 
@@ -169,25 +167,21 @@ const result = await client.Security().load({ id: 'test01' })
 ### Python
 
 ```python
-client = DymoApiIntroductionSDK.test(None, None)
-result, err = client.Security(None).load(
-    {"id": "test01"}, None
-)
+client = DymoApiIntroductionSDK.test()
+result, err = client.Security().load({"id": "test01"})
 ```
 
 ### PHP
 
 ```php
-$client = DymoApiIntroductionSDK::test(null, null);
-[$result, $err] = $client->Security(null)->load(
-    ["id" => "test01"], null
-);
+$client = DymoApiIntroductionSDK::test();
+[$result, $err] = $client->Security()->load(["id" => "test01"]);
 ```
 
 ### Golang
 
 ```go
-client := sdk.TestSDK(nil, nil)
+client := sdk.Test()
 result, err := client.Security(nil).Load(
     map[string]any{"id": "test01"}, nil,
 )
@@ -196,19 +190,15 @@ result, err := client.Security(nil).Load(
 ### Ruby
 
 ```ruby
-client = DymoApiIntroductionSDK.test(nil, nil)
-result, err = client.Security(nil).load(
-  { "id" => "test01" }, nil
-)
+client = DymoApiIntroductionSDK.test
+result, err = client.Security().load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
-local client = sdk.test(nil, nil)
-local result, err = client:Security(nil):load(
-  { id = "test01" }, nil
-)
+local client = sdk.test()
+local result, err = client:Security():load({ id = "test01" })
 ```
 
 ## How it works
@@ -312,11 +302,6 @@ local result, err = client:direct({
 - [Golang](go/README.md)
 - [Ruby](rb/README.md)
 - [Lua](lua/README.md)
-
-## Using the Dymo API
-
-- Upstream: [https://dymo.tpeoficial.com/products/dymo-api](https://dymo.tpeoficial.com/products/dymo-api)
-- API docs: [https://docs.tpeoficial.com/docs/dymo-api/getting-started/introduction](https://docs.tpeoficial.com/docs/dymo-api/getting-started/introduction)
 
 ---
 

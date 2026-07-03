@@ -87,6 +87,7 @@ def _security_basic_setup(extra):
         "DYMOAPIINTRODUCTION_TEST_SECURITY_ENTID": idmap,
         "DYMOAPIINTRODUCTION_TEST_LIVE": "FALSE",
         "DYMOAPIINTRODUCTION_TEST_EXPLAIN": "FALSE",
+        "DYMOAPIINTRODUCTION_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -97,6 +98,7 @@ def _security_basic_setup(extra):
     if env.get("DYMOAPIINTRODUCTION_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
+                "apikey": env.get("DYMOAPIINTRODUCTION_APIKEY"),
             },
             extra or {},
         ])
