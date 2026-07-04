@@ -244,6 +244,19 @@ end
 
 
 
+-- Idiomatic facade: client:security():list() / client:security():load({ id = ... })
+function DymoApiIntroductionSDK:security(data)
+  local EntityMod = require("entity.security_entity")
+  if data == nil then
+    if self._security == nil then
+      self._security = EntityMod.new(self, nil)
+    end
+    return self._security
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:security() instead.
 function DymoApiIntroductionSDK:Security(data)
   local EntityMod = require("entity.security_entity")
   return EntityMod.new(self, data)

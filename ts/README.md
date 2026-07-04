@@ -9,9 +9,12 @@ The TypeScript SDK for the DymoApiIntroduction API — a type-safe, entity-orien
 
 
 ## Install
-```bash
-npm install @voxgig-sdk/dymo-api-introduction
-```
+This package is not yet published to npm. Install it from the GitHub
+release tag (`ts/vX.Y.Z`):
+
+- Releases: [https://github.com/voxgig-sdk/dymo-api-introduction-sdk/releases](https://github.com/voxgig-sdk/dymo-api-introduction-sdk/releases)
+
+
 ## Tutorial: your first API call
 
 This tutorial walks through creating a client, listing entities, and
@@ -20,10 +23,10 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { DymoApiIntroductionSDK } from 'dymo-api-introduction'
+import { DymoApiIntroductionSDK } from '@voxgig-sdk/dymo-api-introduction'
 
 const client = new DymoApiIntroductionSDK({
-  apikey: process.env.DYMO-API-INTRODUCTION_APIKEY,
+  apikey: process.env.DYMO_API_INTRODUCTION_APIKEY,
 })
 ```
 
@@ -31,7 +34,7 @@ const client = new DymoApiIntroductionSDK({
 
 ```ts
 // Create
-const created = await client.Security().create({
+const created = await client.security.create({
   name: 'Example',
 })
 
@@ -79,7 +82,7 @@ Create a mock client for unit testing — no server required:
 ```ts
 const client = DymoApiIntroductionSDK.test()
 
-const result = await client.Planet().load({ id: 'test01' })
+const result = await client.security.load({ id: 'test01' })
 // result.ok === true
 // result.data contains mock response data
 ```
@@ -96,7 +99,7 @@ const testClient = client.tester()
 Entity instances remember their last match and data:
 
 ```ts
-const entity = client.Planet()
+const entity = client.security
 
 // First call sets internal match
 await entity.load({ id: 'example' })
@@ -133,8 +136,8 @@ const client = new DymoApiIntroductionSDK({
 Create a `.env.local` file at the project root:
 
 ```
-DYMO-API-INTRODUCTION_TEST_LIVE=TRUE
-DYMO-API-INTRODUCTION_APIKEY=<your-key>
+DYMO_API_INTRODUCTION_TEST_LIVE=TRUE
+DYMO_API_INTRODUCTION_APIKEY=<your-key>
 ```
 
 Then run:
@@ -274,7 +277,7 @@ API path: `/validate`
 
 ### Security
 
-Create an instance: `const security = client.Security()`
+Create an instance: `const security = client.security`
 
 #### Operations
 
@@ -299,7 +302,7 @@ Create an instance: `const security = client.Security()`
 #### Example: Create
 
 ```ts
-const security = await client.Security().create({
+const security = await client.security.create({
   data: /* `$OBJECT` */,
 })
 ```
@@ -362,7 +365,7 @@ dymo-api-introduction/
 Import the SDK from the package root:
 
 ```ts
-import { DymoApiIntroductionSDK } from 'dymo-api-introduction'
+import { DymoApiIntroductionSDK } from '@voxgig-sdk/dymo-api-introduction'
 ```
 
 ### Entity state
@@ -372,11 +375,11 @@ stores the returned data and match criteria internally. Subsequent
 calls on the same instance can rely on this state.
 
 ```ts
-const moon = client.Moon()
-await moon.load({ planet_id: 'earth', id: 'luna' })
+const security = client.security
+await security.load({ id: "example_id" })
 
-// moon.data() now returns the loaded moon data
-// moon.match() returns { planet_id: 'earth', id: 'luna' }
+// security.data() now returns the loaded security data
+// security.match() returns { id: "example_id" }
 ```
 
 Call `make()` to create a fresh instance with the same configuration

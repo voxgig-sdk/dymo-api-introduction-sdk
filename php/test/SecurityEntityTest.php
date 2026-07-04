@@ -43,8 +43,7 @@ class SecurityEntityTest extends TestCase
         $security_ref01_data = Helpers::to_map(Vs::getprop(
             Vs::getpath($setup["data"], "new.security"), "security_ref01"));
 
-        [$security_ref01_data_result, $err] = $security_ref01_ent->create($security_ref01_data, null);
-        $this->assertNull($err);
+        $security_ref01_data_result = $security_ref01_ent->create($security_ref01_data, null);
         $security_ref01_data = Helpers::to_map($security_ref01_data_result);
         $this->assertNotNull($security_ref01_data);
 

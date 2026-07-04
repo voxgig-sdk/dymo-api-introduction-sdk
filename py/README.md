@@ -9,11 +9,9 @@ The Python SDK for the DymoApiIntroduction API — an entity-oriented client fol
 
 
 ## Install
-```bash
-pip install voxgig-sdk-dymo-api-introduction
-```
-
-Or install from source:
+This package is not yet published to PyPI. Install it from the GitHub
+release tag (`py/vX.Y.Z`, see [Releases](https://github.com/voxgig-sdk/dymo-api-introduction-sdk/releases)) or
+from a source checkout:
 
 ```bash
 pip install -e .
@@ -32,7 +30,7 @@ import os
 from dymoapiintroduction_sdk import DymoApiIntroductionSDK
 
 client = DymoApiIntroductionSDK({
-    "apikey": os.environ.get("DYMO-API-INTRODUCTION_APIKEY"),
+    "apikey": os.environ.get("DYMO_API_INTRODUCTION_APIKEY"),
 })
 ```
 
@@ -40,7 +38,7 @@ client = DymoApiIntroductionSDK({
 
 ```python
 # Create
-created, _ = client.Security().create({"name": "Example"})
+created = client.security.create({"name": "Example"})
 
 ```
 
@@ -52,29 +50,28 @@ created, _ = client.Security().create({"name": "Example"})
 For endpoints not covered by entity methods:
 
 ```python
-result, err = client.direct({
+result = client.direct({
     "path": "/api/resource/{id}",
     "method": "GET",
     "params": {"id": "example"},
 })
-if err:
-    raise Exception(err)
 
 if result["ok"]:
     print(result["status"])  # 200
     print(result["data"])    # response body
+else:
+    print(result["err"])     # error value
 ```
 
 ### Prepare a request without sending it
 
 ```python
-fetchdef, err = client.prepare({
+# prepare() returns the fetch definition and raises on error.
+fetchdef = client.prepare({
     "path": "/api/resource/{id}",
     "method": "DELETE",
     "params": {"id": "example"},
 })
-if err:
-    raise Exception(err)
 
 print(fetchdef["url"])
 print(fetchdef["method"])
@@ -88,7 +85,7 @@ Create a mock client for unit testing — no server required:
 ```python
 client = DymoApiIntroductionSDK.test()
 
-result, err = client.DymoApiIntroduction().load({"id": "test01"})
+result = client.security.load({"id": "test01"})
 # result contains mock response data
 ```
 
@@ -118,8 +115,8 @@ client = DymoApiIntroductionSDK({
 Create a `.env.local` file at the project root:
 
 ```
-DYMO-API-INTRODUCTION_TEST_LIVE=TRUE
-DYMO-API-INTRODUCTION_APIKEY=<your-key>
+DYMO_API_INTRODUCTION_TEST_LIVE=TRUE
+DYMO_API_INTRODUCTION_APIKEY=<your-key>
 ```
 
 Then run:
@@ -165,8 +162,8 @@ Creates a test-mode client with mock transport. Both arguments may be `None`.
 | --- | --- | --- |
 | `options_map` | `() -> dict` | Deep copy of current SDK options. |
 | `get_utility` | `() -> Utility` | Copy of the SDK utility object. |
-| `prepare` | `(fetchargs) -> (dict, err)` | Build an HTTP request definition without sending. |
-| `direct` | `(fetchargs) -> (dict, err)` | Build and send an HTTP request. |
+| `prepare` | `(fetchargs) -> dict` | Build an HTTP request definition without sending. Raises on error. |
+| `direct` | `(fetchargs) -> dict` | Build and send an HTTP request. Returns a result dict (branch on `ok`). |
 | `Security` | `(data) -> SecurityEntity` | Create a Security entity instance. |
 
 ### Entity interface
@@ -175,11 +172,11 @@ All entities share the same interface.
 
 | Method | Signature | Description |
 | --- | --- | --- |
-| `load` | `(reqmatch, ctrl) -> (any, err)` | Load a single entity by match criteria. |
-| `list` | `(reqmatch, ctrl) -> (any, err)` | List entities matching the criteria. |
-| `create` | `(reqdata, ctrl) -> (any, err)` | Create a new entity. |
-| `update` | `(reqdata, ctrl) -> (any, err)` | Update an existing entity. |
-| `remove` | `(reqmatch, ctrl) -> (any, err)` | Remove an entity. |
+| `load` | `(reqmatch, ctrl) -> any` | Load a single entity by match criteria. Raises on error. |
+| `list` | `(reqmatch, ctrl) -> list` | List entities matching the criteria. Raises on error. |
+| `create` | `(reqdata, ctrl) -> any` | Create a new entity. Raises on error. |
+| `update` | `(reqdata, ctrl) -> any` | Update an existing entity. Raises on error. |
+| `remove` | `(reqmatch, ctrl) -> any` | Remove an entity. Raises on error. |
 | `data_get` | `() -> dict` | Get entity data. |
 | `data_set` | `(data)` | Set entity data. |
 | `match_get` | `() -> dict` | Get entity match criteria. |
@@ -189,8 +186,12 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return `(any, err)`. The first value is a
-`dict` with these keys:
+Entity operations return the bare result data (a `dict` for single-entity
+ops, a `list` for `list`) and raise on error. Wrap calls in
+`try`/`except` to handle failures.
+
+The `direct()` escape hatch never raises — it returns a result `dict`
+you branch on via `result["ok"]`:
 
 | Key | Type | Description |
 | --- | --- | --- |
@@ -228,7 +229,7 @@ API path: `/validate`
 
 ### Security
 
-Create an instance: `const security = client.Security()`
+Create an instance: `const security = client.security`
 
 #### Operations
 
@@ -253,7 +254,7 @@ Create an instance: `const security = client.Security()`
 #### Example: Create
 
 ```ts
-const security = await client.Security().create({
+const security = await client.security.create({
   data: /* `$OBJECT` */,
 })
 ```
@@ -329,11 +330,11 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```python
-moon = client.Moon()
-moon.load({"planet_id": "earth", "id": "luna"})
+security = client.security
+security.load({"id": "example_id"})
 
-# moon.data_get() now returns the loaded moon data
-# moon.match_get() returns the last match criteria
+# security.data_get() now returns the loaded security data
+# security.match_get() returns the last match criteria
 ```
 
 Call `make()` to create a fresh instance with the same configuration

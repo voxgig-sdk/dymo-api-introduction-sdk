@@ -44,9 +44,7 @@ class TestSecurityEntity:
         security_ref01_data = helpers.to_map(vs.getprop(
             vs.getpath(setup["data"], "new.security"), "security_ref01"))
 
-        security_ref01_data_result, err = security_ref01_ent.create(security_ref01_data, None)
-        assert err is None
-        security_ref01_data = helpers.to_map(security_ref01_data_result)
+        security_ref01_data = helpers.to_map(security_ref01_ent.create(security_ref01_data, None))
         assert security_ref01_data is not None
 
 

@@ -36,8 +36,7 @@ class SecurityEntityTest < Minitest::Test
     security_ref01_data = Helpers.to_map(Vs.getprop(
       Vs.getpath(setup[:data], "new.security"), "security_ref01"))
 
-    security_ref01_data_result, err = security_ref01_ent.create(security_ref01_data, nil)
-    assert_nil err
+    security_ref01_data_result = security_ref01_ent.create(security_ref01_data, nil)
     security_ref01_data = Helpers.to_map(security_ref01_data_result)
     assert !security_ref01_data.nil?
 

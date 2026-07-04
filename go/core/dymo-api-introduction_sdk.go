@@ -245,6 +245,9 @@ func (sdk *DymoApiIntroductionSDK) Direct(fetchargs map[string]any) (map[string]
 }
 
 
+// Security returns a Security entity bound to this client.
+// Idiomatic usage: client.Security(nil).List(nil, nil) or
+// client.Security(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *DymoApiIntroductionSDK) Security(data map[string]any) DymoApiIntroductionEntity {
 	return NewSecurityEntityFunc(sdk, data)
 }

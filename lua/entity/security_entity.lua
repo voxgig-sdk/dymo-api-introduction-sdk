@@ -83,6 +83,10 @@ end
 
 
 
+---@param reqdata SecurityCreateData
+---@param ctrl? table
+---@return Security
+---@return string? err
 function SecurityEntity:create(reqdata, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({
