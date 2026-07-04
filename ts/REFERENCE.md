@@ -110,7 +110,7 @@ Alias for `DymoApiIntroductionSDK.test()`.
 ## SecurityEntity
 
 ```ts
-const security = client.security
+const security = client.Security()
 ```
 
 ### Fields
@@ -134,7 +134,7 @@ const security = client.security
 Create a new entity with the given data.
 
 ```ts
-const result = await client.security.create({
+const result = await client.Security().create({
   data: /* `$OBJECT` */,
 })
 ```

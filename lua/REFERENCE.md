@@ -84,7 +84,7 @@ same parameters as `direct()`.
 ## SecurityEntity
 
 ```lua
-local security = client:security(nil)
+local security = client:Security(nil)
 ```
 
 ### Fields
@@ -108,7 +108,7 @@ local security = client:security(nil)
 Create a new entity with the given data.
 
 ```lua
-local result, err = client:security():create({
+local result, err = client:Security():create({
   data = --[[ `$OBJECT` ]],
 })
 ```

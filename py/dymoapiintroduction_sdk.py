@@ -220,25 +220,15 @@ class DymoApiIntroductionSDK:
         }
 
 
-    @property
-    def security(self):
-        """Idiomatic facade: client.security.list() / client.security.load({"id": ...})."""
-        from entity.security_entity import SecurityEntity
-        cached = getattr(self, "_security", None)
-        if cached is None:
-            cached = SecurityEntity(self, None)
-            self._security = cached
-        return cached
-
-    def Security(self, data=None):
-        # Deprecated: use client.security instead.
+    def Security(self, data=None) -> "SecurityEntity":
+        """Entity factory: client.Security().list({}) / client.Security().load({"id": ...})."""
         from entity.security_entity import SecurityEntity
         return SecurityEntity(self, data)
 
 
 
     @classmethod
-    def test(cls, testopts=None, sdkopts=None):
+    def test(cls, testopts=None, sdkopts=None) -> "DymoApiIntroductionSDK":
         if sdkopts is None:
             sdkopts = {}
         sdkopts = vs.clone(sdkopts)
@@ -258,3 +248,9 @@ class DymoApiIntroductionSDK:
         sdk.mode = "test"
 
         return sdk
+
+
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from entity.security_entity import SecurityEntity

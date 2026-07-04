@@ -87,7 +87,7 @@ same parameters as `direct()`. Raises on error.
 ## SecurityEntity
 
 ```ruby
-security = client.security
+security = client.Security
 ```
 
 ### Fields
@@ -111,7 +111,7 @@ security = client.security
 Create a new entity with the given data. Raises on error.
 
 ```ruby
-result = client.security.create({
+result = client.Security.create({
   "data" => # `$OBJECT`,
 })
 ```

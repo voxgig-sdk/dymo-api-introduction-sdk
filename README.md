@@ -141,22 +141,27 @@ in-memory mock, so unit tests run offline.
 
 ```ts
 const client = DymoApiIntroductionSDK.test()
-const result = await client.security.load({ id: 'test01' })
-// result.ok === true, result.data contains mock data
+const security = await client.Security().load({ id: 'test01' })
+// security is a bare Security populated with mock data
+console.log(security)
 ```
 
 ### Python
 
 ```python
 client = DymoApiIntroductionSDK.test()
-result = client.security.load({"id": "test01"})
+security = client.Security().load({"id": "test01"})
+print(security)
 ```
 
 ### PHP
 
 ```php
-$client = DymoApiIntroductionSDK::test();
-$result = $client->security()->load(["id" => "test01"]);
+// Seed fixture data so offline calls resolve without a live server.
+$client = DymoApiIntroductionSDK::test([
+    "entity" => ["security" => ["test01" => ["id" => "test01"]]],
+]);
+$security = $client->Security()->load(["id" => "test01"]);
 ```
 
 ### Golang
@@ -171,15 +176,18 @@ result, err := client.Security(nil).Load(
 ### Ruby
 
 ```ruby
-client = DymoApiIntroductionSDK.test
-result = client.security.load({ "id" => "test01" })
+# Seed fixture data so offline calls resolve without a live server.
+client = DymoApiIntroductionSDK.test({
+  "entity" => { "security" => { "test01" => { "id" => "test01" } } },
+})
+security = client.Security.load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
 local client = sdk.test()
-local result, err = client:security():load({ id = "test01" })
+local result, err = client:Security():load({ id = "test01" })
 ```
 
 ## How it works
@@ -227,6 +235,9 @@ const result = await client.direct({
   method: 'GET',
   params: { id: 'example' },
 })
+if (result instanceof Error) {
+  throw result
+}
 console.log(result.data)
 ```
 

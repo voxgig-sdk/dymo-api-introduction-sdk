@@ -233,10 +233,10 @@ class DymoApiIntroductionSDK
 
     private $_security = null;
 
-    // Idiomatic facade: $client->security()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Security() (PHP method
-    // names are case-insensitive).
-    public function security($data = null)
+    // Canonical facade: $client->Security()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->security()
+    // resolves here too.
+    public function Security($data = null)
     {
         require_once __DIR__ . '/entity/security_entity.php';
         if ($data === null) {

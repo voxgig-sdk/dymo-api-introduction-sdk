@@ -244,8 +244,9 @@ end
 
 
 
--- Idiomatic facade: client:security():list() / client:security():load({ id = ... })
-function DymoApiIntroductionSDK:security(data)
+-- Idiomatic facade: client:Security():list() / client:Security():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function DymoApiIntroductionSDK:Security(data)
   local EntityMod = require("entity.security_entity")
   if data == nil then
     if self._security == nil then
@@ -253,12 +254,6 @@ function DymoApiIntroductionSDK:security(data)
     end
     return self._security
   end
-  return EntityMod.new(self, data)
-end
-
--- Deprecated: use client:security() instead.
-function DymoApiIntroductionSDK:Security(data)
-  local EntityMod = require("entity.security_entity")
   return EntityMod.new(self, data)
 end
 

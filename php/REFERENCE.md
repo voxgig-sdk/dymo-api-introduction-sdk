@@ -86,7 +86,7 @@ Prepare a fetch definition without sending the request. Returns the
 ## SecurityEntity
 
 ```php
-$security = $client->security();
+$security = $client->Security();
 ```
 
 ### Fields
@@ -110,7 +110,7 @@ $security = $client->security();
 Create a new entity with the given data. Throws on error.
 
 ```php
-$result = $client->security()->create([
+$result = $client->Security()->create([
   "data" => /* `$OBJECT` */,
 ]);
 ```

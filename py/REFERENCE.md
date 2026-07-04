@@ -81,7 +81,7 @@ Prepare a fetch definition without sending. Returns the `fetchdef` and raises on
 ## SecurityEntity
 
 ```python
-security = client.security
+security = client.Security()
 ```
 
 ### Fields
@@ -105,8 +105,8 @@ security = client.security
 Create a new entity with the given data. Returns the created entity data and raises on error.
 
 ```python
-result = client.security.create({
-    "data": # `$OBJECT`,
+result = client.Security().create({
+    "data": ...,  # `$OBJECT`
 })
 ```
 

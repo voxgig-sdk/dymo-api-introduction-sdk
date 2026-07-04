@@ -204,14 +204,7 @@ class DymoApiIntroductionSDK {
 
 
 
-  _security?: SecurityEntity
-
-  // Idiomatic facade: `client.security.list()` / `client.security.load({ id })`.
-  get security(): SecurityEntity {
-    return (this._security ??= new SecurityEntity(this, undefined))
-  }
-
-  /** @deprecated Use `client.security` instead. */
+  // Entity access: `client.Security().list()` / `client.Security().load({ id })`.
   Security(data?: any) {
     const self = this
     return new SecurityEntity(self,data)

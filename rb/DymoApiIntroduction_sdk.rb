@@ -208,13 +208,7 @@ class DymoApiIntroductionSDK
   end
 
 
-  # Idiomatic facade: client.security.list / client.security.load({ "id" => ... })
-  def security
-    require_relative 'entity/security_entity'
-    @security ||= SecurityEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.security instead.
+  # Canonical facade: client.Security.list / client.Security.load({ "id" => ... })
   def Security(data = nil)
     require_relative 'entity/security_entity'
     SecurityEntity.new(self, data)

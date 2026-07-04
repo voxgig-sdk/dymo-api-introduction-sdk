@@ -34,8 +34,8 @@ $client = new DymoApiIntroductionSDK([
 ### 4. Create, update, and remove
 
 ```php
-// Create
-$created = $client->security()->create(["name" => "Example"]);
+// create() returns the bare created Security record.
+$created = $client->Security()->create(["name" => "Example"]);
 
 ```
 
@@ -80,13 +80,17 @@ print_r($fetchdef["headers"]);
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required:
+Create a mock client for unit testing — no server required. Seed fixture
+data via the `entity` option so offline calls resolve without a live server:
 
 ```php
-$client = DymoApiIntroductionSDK::test();
+$client = DymoApiIntroductionSDK::test([
+    "entity" => ["security" => ["test01" => ["id" => "test01"]]],
+]);
 
-$result = $client->security()->load(["id" => "test01"]);
-// $result contains mock response data
+// load() returns the bare mock record (throws on error).
+$security = $client->Security()->load(["id" => "test01"]);
+print_r($security);
 ```
 
 ### Use a custom fetch function
@@ -232,7 +236,7 @@ API path: `/validate`
 
 ### Security
 
-Create an instance: `const security = client.security`
+Create an instance: `$security = $client->Security();`
 
 #### Operations
 
@@ -256,10 +260,10 @@ Create an instance: `const security = client.security`
 
 #### Example: Create
 
-```ts
-const security = await client.security.create({
-  data: /* `$OBJECT` */,
-})
+```php
+$security = $client->Security()->create([
+    "data" => null, // `$OBJECT`
+]);
 ```
 
 
@@ -334,7 +338,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```php
-$security = $client->security();
+$security = $client->Security();
 $security->load(["id" => "example_id"]);
 
 // $security->dataGet() now returns the loaded security data

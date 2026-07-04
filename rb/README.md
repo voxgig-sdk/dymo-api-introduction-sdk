@@ -33,8 +33,8 @@ client = DymoApiIntroductionSDK.new({
 ### 4. Create, update, and remove
 
 ```ruby
-# Create
-created = client.security.create({ "name" => "Example" })
+# create returns the bare created Security record.
+created = client.Security.create({ "name" => "Example" })
 
 ```
 
@@ -79,13 +79,17 @@ end
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required:
+Create a mock client for unit testing — no server required. Seed fixture
+data via the `entity` option so offline calls resolve without a live server:
 
 ```ruby
-client = DymoApiIntroductionSDK.test
+client = DymoApiIntroductionSDK.test({
+  "entity" => { "security" => { "test01" => { "id" => "test01" } } },
+})
 
-result = client.security.load({ "id" => "test01" })
-# result contains mock response data
+# load returns the bare mock record (raises on error).
+security = client.Security.load({ "id" => "test01" })
+puts security
 ```
 
 ### Use a custom fetch function
@@ -227,7 +231,7 @@ API path: `/validate`
 
 ### Security
 
-Create an instance: `const security = client.security`
+Create an instance: `security = client.Security`
 
 #### Operations
 
@@ -251,9 +255,9 @@ Create an instance: `const security = client.security`
 
 #### Example: Create
 
-```ts
-const security = await client.security.create({
-  data: /* `$OBJECT` */,
+```ruby
+security = client.Security.create({
+  "data" => nil, # `$OBJECT`
 })
 ```
 
@@ -329,7 +333,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```ruby
-security = client.security
+security = client.Security
 security.load({ "id" => "example_id" })
 
 # security.data_get now returns the loaded security data

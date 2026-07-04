@@ -37,8 +37,8 @@ client = DymoApiIntroductionSDK({
 ### 4. Create, update, and remove
 
 ```python
-# Create
-created = client.security.create({"name": "Example"})
+# Create — returns the bare created record (a dict)
+created = client.Security().create({"name": "Example"})
 
 ```
 
@@ -85,8 +85,9 @@ Create a mock client for unit testing — no server required:
 ```python
 client = DymoApiIntroductionSDK.test()
 
-result = client.security.load({"id": "test01"})
-# result contains mock response data
+# Entity ops return the bare record and raise on error.
+security = client.Security().load({"id": "test01"})
+# security contains the mock response record
 ```
 
 ### Use a custom fetch function
@@ -229,7 +230,7 @@ API path: `/validate`
 
 ### Security
 
-Create an instance: `const security = client.security`
+Create an instance: `security = client.Security()`
 
 #### Operations
 
@@ -253,9 +254,9 @@ Create an instance: `const security = client.security`
 
 #### Example: Create
 
-```ts
-const security = await client.security.create({
-  data: /* `$OBJECT` */,
+```python
+security = client.Security().create({
+    "data": ...,  # `$OBJECT`
 })
 ```
 
@@ -330,7 +331,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```python
-security = client.security
+security = client.Security()
 security.load({"id": "example_id"})
 
 # security.data_get() now returns the loaded security data
