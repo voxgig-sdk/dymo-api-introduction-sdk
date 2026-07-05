@@ -91,15 +91,15 @@ local security = client:Security(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ai_insight` | ``$OBJECT`` | No |  |
-| `analytics` | ``$OBJECT`` | No |  |
-| `data` | ``$OBJECT`` | Yes |  |
-| `enable_ai` | ``$BOOLEAN`` | No |  |
-| `marketing_insight` | ``$OBJECT`` | No |  |
-| `status` | ``$STRING`` | No |  |
-| `timestamp` | ``$STRING`` | No |  |
-| `validation_result` | ``$OBJECT`` | No |  |
-| `validation_type` | ``$STRING`` | No |  |
+| `ai_insight` | `table` | No |  |
+| `analytics` | `table` | No |  |
+| `data` | `table` | Yes |  |
+| `enable_ai` | `boolean` | No |  |
+| `marketing_insight` | `table` | No |  |
+| `status` | `string` | No |  |
+| `timestamp` | `string` | No |  |
+| `validation_result` | `table` | No |  |
+| `validation_type` | `string` | No |  |
 
 ### Operations
 
@@ -109,7 +109,7 @@ Create a new entity with the given data.
 
 ```lua
 local result, err = client:Security():create({
-  data = --[[ `$OBJECT` ]],
+  data = --[[ table ]],
 })
 ```
 

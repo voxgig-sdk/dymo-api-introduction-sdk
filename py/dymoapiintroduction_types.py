@@ -31,10 +31,13 @@ class Security(SecurityRequired, total=False):
     validation_type: str
 
 
-class SecurityCreateData(TypedDict, total=False):
+class SecurityCreateDataRequired(TypedDict):
+    data: dict
+
+
+class SecurityCreateData(SecurityCreateDataRequired, total=False):
     ai_insight: dict
     analytics: dict
-    data: dict
     enable_ai: bool
     marketing_insight: dict
     status: str

@@ -8,7 +8,7 @@ Complete API reference for the DymoApiIntroduction Ruby SDK.
 ### Constructor
 
 ```ruby
-require_relative 'dymo-api-introduction_sdk'
+require_relative 'DymoApiIntroduction_sdk'
 
 client = DymoApiIntroductionSDK.new(options)
 ```
@@ -94,15 +94,15 @@ security = client.Security
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ai_insight` | ``$OBJECT`` | No |  |
-| `analytics` | ``$OBJECT`` | No |  |
-| `data` | ``$OBJECT`` | Yes |  |
-| `enable_ai` | ``$BOOLEAN`` | No |  |
-| `marketing_insight` | ``$OBJECT`` | No |  |
-| `status` | ``$STRING`` | No |  |
-| `timestamp` | ``$STRING`` | No |  |
-| `validation_result` | ``$OBJECT`` | No |  |
-| `validation_type` | ``$STRING`` | No |  |
+| `ai_insight` | `Hash` | No |  |
+| `analytics` | `Hash` | No |  |
+| `data` | `Hash` | Yes |  |
+| `enable_ai` | `Boolean` | No |  |
+| `marketing_insight` | `Hash` | No |  |
+| `status` | `String` | No |  |
+| `timestamp` | `String` | No |  |
+| `validation_result` | `Hash` | No |  |
+| `validation_type` | `String` | No |  |
 
 ### Operations
 
@@ -112,7 +112,7 @@ Create a new entity with the given data. Raises on error.
 
 ```ruby
 result = client.Security.create({
-  "data" => # `$OBJECT`,
+  "data" => {}, # Hash
 })
 ```
 

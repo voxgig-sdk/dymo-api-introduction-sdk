@@ -8,7 +8,7 @@ Complete API reference for the DymoApiIntroduction Python SDK.
 ### Constructor
 
 ```python
-from dymo-api-introduction_sdk import DymoApiIntroductionSDK
+from dymoapiintroduction_sdk import DymoApiIntroductionSDK
 
 client = DymoApiIntroductionSDK(options)
 ```
@@ -88,15 +88,15 @@ security = client.Security()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ai_insight` | ``$OBJECT`` | No |  |
-| `analytics` | ``$OBJECT`` | No |  |
-| `data` | ``$OBJECT`` | Yes |  |
-| `enable_ai` | ``$BOOLEAN`` | No |  |
-| `marketing_insight` | ``$OBJECT`` | No |  |
-| `status` | ``$STRING`` | No |  |
-| `timestamp` | ``$STRING`` | No |  |
-| `validation_result` | ``$OBJECT`` | No |  |
-| `validation_type` | ``$STRING`` | No |  |
+| `ai_insight` | `dict` | No |  |
+| `analytics` | `dict` | No |  |
+| `data` | `dict` | Yes |  |
+| `enable_ai` | `bool` | No |  |
+| `marketing_insight` | `dict` | No |  |
+| `status` | `str` | No |  |
+| `timestamp` | `str` | No |  |
+| `validation_result` | `dict` | No |  |
+| `validation_type` | `str` | No |  |
 
 ### Operations
 
@@ -106,7 +106,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```python
 result = client.Security().create({
-    "data": ...,  # `$OBJECT`
+    "data": {},  # dict
 })
 ```
 

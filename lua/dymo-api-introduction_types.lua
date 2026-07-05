@@ -18,6 +18,15 @@
 ---@field validation_type? string
 
 ---@class SecurityCreateData
+---@field ai_insight? table
+---@field analytics? table
+---@field data table
+---@field enable_ai? boolean
+---@field marketing_insight? table
+---@field status? string
+---@field timestamp? string
+---@field validation_result? table
+---@field validation_type? string
 
 local M = {}
 

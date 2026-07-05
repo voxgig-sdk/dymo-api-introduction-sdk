@@ -26,12 +26,12 @@ class Security
     public ?string $validation_type = null;
 }
 
-/** Match filter for Security#create (any subset of Security fields). */
+/** Request payload for Security#create. */
 class SecurityCreateData
 {
     public ?array $ai_insight = null;
     public ?array $analytics = null;
-    public ?array $data = null;
+    public array $data;
     public ?bool $enable_ai = null;
     public ?array $marketing_insight = null;
     public ?string $status = null;

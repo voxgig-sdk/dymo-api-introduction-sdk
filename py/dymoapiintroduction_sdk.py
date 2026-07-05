@@ -221,7 +221,7 @@ class DymoApiIntroductionSDK:
 
 
     def Security(self, data=None) -> "SecurityEntity":
-        """Entity factory: client.Security().list({}) / client.Security().load({"id": ...})."""
+        """Entity factory: client.Security().list() / client.Security().load({"id": ...})."""
         from entity.security_entity import SecurityEntity
         return SecurityEntity(self, data)
 

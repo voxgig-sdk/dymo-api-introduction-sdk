@@ -49,7 +49,7 @@ Security = Struct.new(
   keyword_init: true
 )
 
-# Match filter for Security#create (any subset of Security fields).
+# Request payload for Security#create.
 #
 # @!attribute [rw] ai_insight
 #   @return [Hash, nil]
@@ -58,7 +58,7 @@ Security = Struct.new(
 #   @return [Hash, nil]
 #
 # @!attribute [rw] data
-#   @return [Hash, nil]
+#   @return [Hash]
 #
 # @!attribute [rw] enable_ai
 #   @return [Boolean, nil]

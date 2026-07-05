@@ -17,5 +17,15 @@ export interface Security {
   validation_type?: string
 }
 
-export type SecurityCreateData = Partial<Security>
+export interface SecurityCreateData {
+  ai_insight?: Record<string, any>
+  analytics?: Record<string, any>
+  data: Record<string, any>
+  enable_ai?: boolean
+  marketing_insight?: Record<string, any>
+  status?: string
+  timestamp?: string
+  validation_result?: Record<string, any>
+  validation_type?: string
+}
 

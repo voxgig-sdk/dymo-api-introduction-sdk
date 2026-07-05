@@ -8,7 +8,7 @@ Complete API reference for the DymoApiIntroduction PHP SDK.
 ### Constructor
 
 ```php
-require_once __DIR__ . '/dymo-api-introduction_sdk.php';
+require_once __DIR__ . '/dymoapiintroduction_sdk.php';
 
 $client = new DymoApiIntroductionSDK($options);
 ```
@@ -46,11 +46,11 @@ $client = DymoApiIntroductionSDK::test();
 
 Create a new `SecurityEntity` instance. Pass `null` for no initial data.
 
-#### `optionsMap(): array`
+#### `options_map(): array`
 
 Return a deep copy of the current SDK options.
 
-#### `getUtility(): ProjectNameUtility`
+#### `get_utility(): DymoApiIntroductionUtility`
 
 Return a copy of the SDK utility object.
 
@@ -93,15 +93,15 @@ $security = $client->Security();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ai_insight` | ``$OBJECT`` | No |  |
-| `analytics` | ``$OBJECT`` | No |  |
-| `data` | ``$OBJECT`` | Yes |  |
-| `enable_ai` | ``$BOOLEAN`` | No |  |
-| `marketing_insight` | ``$OBJECT`` | No |  |
-| `status` | ``$STRING`` | No |  |
-| `timestamp` | ``$STRING`` | No |  |
-| `validation_result` | ``$OBJECT`` | No |  |
-| `validation_type` | ``$STRING`` | No |  |
+| `ai_insight` | `array` | No |  |
+| `analytics` | `array` | No |  |
+| `data` | `array` | Yes |  |
+| `enable_ai` | `bool` | No |  |
+| `marketing_insight` | `array` | No |  |
+| `status` | `string` | No |  |
+| `timestamp` | `string` | No |  |
+| `validation_result` | `array` | No |  |
+| `validation_type` | `string` | No |  |
 
 ### Operations
 
@@ -111,25 +111,25 @@ Create a new entity with the given data. Throws on error.
 
 ```php
 $result = $client->Security()->create([
-  "data" => /* `$OBJECT` */,
+  "data" => null, // array
 ]);
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -138,7 +138,7 @@ Set the entity match criteria.
 Create a new `SecurityEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 

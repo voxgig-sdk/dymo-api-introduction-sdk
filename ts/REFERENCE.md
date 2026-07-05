@@ -117,15 +117,15 @@ const security = client.Security()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ai_insight` | ``$OBJECT`` | No |  |
-| `analytics` | ``$OBJECT`` | No |  |
-| `data` | ``$OBJECT`` | Yes |  |
-| `enable_ai` | ``$BOOLEAN`` | No |  |
-| `marketing_insight` | ``$OBJECT`` | No |  |
-| `status` | ``$STRING`` | No |  |
-| `timestamp` | ``$STRING`` | No |  |
-| `validation_result` | ``$OBJECT`` | No |  |
-| `validation_type` | ``$STRING`` | No |  |
+| `ai_insight` | `Record<string, any>` | No |  |
+| `analytics` | `Record<string, any>` | No |  |
+| `data` | `Record<string, any>` | Yes |  |
+| `enable_ai` | `boolean` | No |  |
+| `marketing_insight` | `Record<string, any>` | No |  |
+| `status` | `string` | No |  |
+| `timestamp` | `string` | No |  |
+| `validation_result` | `Record<string, any>` | No |  |
+| `validation_type` | `string` | No |  |
 
 ### Operations
 
@@ -135,7 +135,7 @@ Create a new entity with the given data.
 
 ```ts
 const result = await client.Security().create({
-  data: /* `$OBJECT` */,
+  data: /* Record<string, any> */,
 })
 ```
 

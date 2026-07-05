@@ -98,15 +98,15 @@ security := client.Security(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ai_insight` | ``$OBJECT`` | No |  |
-| `analytics` | ``$OBJECT`` | No |  |
-| `data` | ``$OBJECT`` | Yes |  |
-| `enable_ai` | ``$BOOLEAN`` | No |  |
-| `marketing_insight` | ``$OBJECT`` | No |  |
-| `status` | ``$STRING`` | No |  |
-| `timestamp` | ``$STRING`` | No |  |
-| `validation_result` | ``$OBJECT`` | No |  |
-| `validation_type` | ``$STRING`` | No |  |
+| `ai_insight` | `map[string]any` | No |  |
+| `analytics` | `map[string]any` | No |  |
+| `data` | `map[string]any` | Yes |  |
+| `enable_ai` | `bool` | No |  |
+| `marketing_insight` | `map[string]any` | No |  |
+| `status` | `string` | No |  |
+| `timestamp` | `string` | No |  |
+| `validation_result` | `map[string]any` | No |  |
+| `validation_type` | `string` | No |  |
 
 ### Operations
 
@@ -116,7 +116,7 @@ Create a new entity with the given data.
 
 ```go
 result, err := client.Security(nil).Create(map[string]any{
-    "data": /* `$OBJECT` */,
+    "data": /* map[string]any */,
 }, nil)
 ```
 

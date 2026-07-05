@@ -21,12 +21,11 @@ type Security struct {
 	ValidationType *string `json:"validation_type,omitempty"`
 }
 
-// SecurityCreateData mirrors the security fields as an all-optional match
-// filter (Go analog of Partial<Security>).
+// SecurityCreateData is the typed request payload for Security.CreateTyped.
 type SecurityCreateData struct {
 	AiInsight *map[string]any `json:"ai_insight,omitempty"`
 	Analytics *map[string]any `json:"analytics,omitempty"`
-	Data *map[string]any `json:"data,omitempty"`
+	Data map[string]any `json:"data"`
 	EnableAi *bool `json:"enable_ai,omitempty"`
 	MarketingInsight *map[string]any `json:"marketing_insight,omitempty"`
 	Status *string `json:"status,omitempty"`
