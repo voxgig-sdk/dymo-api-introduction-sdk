@@ -16,7 +16,7 @@ module DymoApiIntroductionConfig
       "options" => {
         "base" => "https://api.dymo.com/v1",
         "auth" => {
-          "prefix" => "Bearer",
+          "prefix" => "",
         },
         "headers" => {
           "content-type" => "application/json",

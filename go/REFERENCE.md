@@ -92,6 +92,7 @@ same parameters as `Direct()`.
 
 ```go
 security := client.Security(nil)
+fmt.Println(security.GetName()) // "security"
 ```
 
 ### Fields
@@ -116,8 +117,12 @@ Create a new entity with the given data.
 
 ```go
 result, err := client.Security(nil).Create(map[string]any{
-    "data": /* map[string]any */,
+    "data": map[string]any{},
 }, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
 ```
 
 ### Common Methods

@@ -277,7 +277,7 @@ Create an instance: `local security = client:Security(nil)`
 
 ```lua
 local security, err = client:Security():create({
-  data = nil, -- table
+  data = {}, -- table
 })
 ```
 

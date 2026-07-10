@@ -9,15 +9,22 @@ main: {
         url: "https://tpe.li/D-DMAPI"
       }
       description: "The Dymo API provides a comprehensive solution for businesses by integrating security, AI, marketing, and analytics into a single platform. It allows users to validate data, detect malicious activity, and enhance marketing strategies while gaining insights into customer behavior."
+      security: {
+        in: "header"
+        name: "X-API-Key"
+        prefix: ""
+        scheme: "ApiKeyAuth"
+        type: "apiKey"
+      }
       servers: [
         {
           description: "Production server"
           url: "https://api.dymo.com/v1"
         }
       ]
+      summary: "The Dymo API provides a comprehensive solution for businesses by integrating security, AI, marketing, and analytics into a single platform."
       title: "Dymo API"
       version: "1.0.0"
+      website: "https://dymo.com"
     }
   }
-}
-

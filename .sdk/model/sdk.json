@@ -6,9 +6,6 @@
     },
     "kit": {
       "config": {
-        "auth": {
-          "prefix": "Bearer"
-        },
         "docs_order": [
           "ts",
           "py",
@@ -233,14 +230,24 @@
           "url": "https://tpe.li/D-DMAPI"
         },
         "description": "The Dymo API provides a comprehensive solution for businesses by integrating security, AI, marketing, and analytics into a single platform. It allows users to validate data, detect malicious activity, and enhance marketing strategies while gaining insights into customer behavior.",
+        "meta_source": "https://www.freepublicapis.com",
+        "security": {
+          "in": "header",
+          "name": "X-API-Key",
+          "prefix": "",
+          "scheme": "ApiKeyAuth",
+          "type": "apiKey"
+        },
         "servers": [
           {
             "description": "Production server",
             "url": "https://api.dymo.com/v1"
           }
         ],
+        "summary": "The Dymo API provides a comprehensive solution for businesses by integrating security, AI, marketing, and analytics into a single platform.",
         "title": "Dymo API",
-        "version": "1.0.0"
+        "version": "1.0.0",
+        "website": "https://dymo.com"
       },
       "option": {},
       "target": {
@@ -293,6 +300,9 @@
           },
           "name": "go-cli",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },
@@ -343,6 +353,9 @@
           },
           "name": "go-mcp",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },

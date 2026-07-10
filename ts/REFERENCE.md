@@ -135,7 +135,7 @@ Create a new entity with the given data.
 
 ```ts
 const result = await client.Security().create({
-  data: /* Record<string, any> */,
+  data: {},
 })
 ```
 

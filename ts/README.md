@@ -334,7 +334,7 @@ Create an instance: `const security = client.Security()`
 
 ```ts
 const security = await client.Security().create({
-  data: /* Record<string, any> */,
+  data: {},
 })
 ```
 

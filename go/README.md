@@ -310,8 +310,12 @@ Create an instance: `security := client.Security(nil)`
 
 ```go
 result, err := client.Security(nil).Create(map[string]any{
-    "data": /* map[string]any */,
+    "data": map[string]any{},
 }, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
 ```
 
 
