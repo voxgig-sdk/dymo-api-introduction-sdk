@@ -27,7 +27,20 @@ func main() {
 }
 
 func run(args []string, in io.Reader, out, errOut io.Writer) int {
-	client := sdk.NewDymoApiIntroductionSDK(nil)
+	// Configure from the environment: DYMO_API_INTRODUCTION_APIKEY carries the API key and
+	// DYMO_API_INTRODUCTION_BASE optionally overrides the API base URL (e.g. production).
+	// Both injectable by a secrets vault. Unset -> nil config defaults.
+	var opts map[string]any
+	if apikey := os.Getenv("DYMO_API_INTRODUCTION_APIKEY"); apikey != "" {
+		opts = map[string]any{"apikey": apikey}
+	}
+	if base := os.Getenv("DYMO_API_INTRODUCTION_BASE"); base != "" {
+		if opts == nil {
+			opts = map[string]any{}
+		}
+		opts["base"] = base
+	}
+	client := sdk.NewDymoApiIntroductionSDK(opts)
 
 	r, err := eng.NewRegistry()
 	if err != nil {
