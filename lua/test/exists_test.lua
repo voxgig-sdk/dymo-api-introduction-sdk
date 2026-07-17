@@ -1,4 +1,4 @@
--- ProjectName SDK exists test
+-- DymoApiIntroduction SDK exists test
 
 local sdk = require("dymo-api-introduction_sdk")
 
