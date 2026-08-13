@@ -23,8 +23,8 @@ module DymoApiIntroductionTestRunner
   end
 
   def self.env_override(m)
-    live = getenv("DYMOAPIINTRODUCTION_TEST_LIVE")
-    override = getenv("DYMOAPIINTRODUCTION_TEST_OVERRIDE")
+    live = getenv("DYMO_API_INTRODUCTION_TEST_LIVE")
+    override = getenv("DYMO_API_INTRODUCTION_TEST_OVERRIDE")
 
     if live == "TRUE" || override == "TRUE"
       m.each_key do |key|
@@ -44,8 +44,8 @@ module DymoApiIntroductionTestRunner
       end
     end
 
-    explain = getenv("DYMOAPIINTRODUCTION_TEST_EXPLAIN")
-    m["DYMOAPIINTRODUCTION_TEST_EXPLAIN"] = explain if explain && !explain.empty?
+    explain = getenv("DYMO_API_INTRODUCTION_TEST_EXPLAIN")
+    m["DYMO_API_INTRODUCTION_TEST_EXPLAIN"] = explain if explain && !explain.empty?
 
     m
   end

@@ -6,26 +6,26 @@
 // @voxgig/apidef VALID_CANON). Do not edit by hand.
 
 export interface Security {
-  ai_insight?: Record<string, any>
+  aiInsights?: Record<string, any>
   analytics?: Record<string, any>
   data: Record<string, any>
-  enable_ai?: boolean
-  marketing_insight?: Record<string, any>
+  enableAI?: boolean
+  marketingInsights?: Record<string, any>
   status?: string
   timestamp?: string
-  validation_result?: Record<string, any>
-  validation_type?: string
+  validationResults?: Record<string, any>
+  validationType?: string
 }
 
 export interface SecurityCreateData {
-  ai_insight?: Record<string, any>
+  aiInsights?: Record<string, any>
   analytics?: Record<string, any>
   data: Record<string, any>
-  enable_ai?: boolean
-  marketing_insight?: Record<string, any>
+  enableAI?: boolean
+  marketingInsights?: Record<string, any>
   status?: string
   timestamp?: string
-  validation_result?: Record<string, any>
-  validation_type?: string
+  validationResults?: Record<string, any>
+  validationType?: string
 }
 

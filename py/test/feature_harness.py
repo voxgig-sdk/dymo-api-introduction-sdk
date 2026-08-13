@@ -14,12 +14,12 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from config import make_config
-from features import _make_feature
-from core.control import DymoApiIntroductionControl
-from core.error import DymoApiIntroductionError
-from core.result import DymoApiIntroductionResult
-from core.spec import DymoApiIntroductionSpec
+from dymoapiintroduction_sdk.config import make_config
+from dymoapiintroduction_sdk.features import _make_feature
+from dymoapiintroduction_sdk.core.control import DymoApiIntroductionControl
+from dymoapiintroduction_sdk.core.error import DymoApiIntroductionError
+from dymoapiintroduction_sdk.core.result import DymoApiIntroductionResult
+from dymoapiintroduction_sdk.core.spec import DymoApiIntroductionSpec
 
 
 # True when this SDK was generated with the named feature.

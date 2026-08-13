@@ -16,11 +16,11 @@
 import pytest
 
 from projectname_sdk import DymoApiIntroductionSDK
-from core.error import DymoApiIntroductionError
-from core.result import DymoApiIntroductionResult
-from core.response import DymoApiIntroductionResponse
-from core.spec import DymoApiIntroductionSpec
-from feature.base_feature import DymoApiIntroductionBaseFeature
+from projectname_sdk.core.error import DymoApiIntroductionError
+from projectname_sdk.core.result import DymoApiIntroductionResult
+from projectname_sdk.core.response import DymoApiIntroductionResponse
+from projectname_sdk.core.spec import DymoApiIntroductionSpec
+from projectname_sdk.feature.base_feature import DymoApiIntroductionBaseFeature
 
 
 def _client():

@@ -88,15 +88,15 @@ security = client.Security()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ai_insight` | `dict` | No |  |
+| `aiInsights` | `dict` | No |  |
 | `analytics` | `dict` | No |  |
 | `data` | `dict` | Yes |  |
-| `enable_ai` | `bool` | No |  |
-| `marketing_insight` | `dict` | No |  |
+| `enableAI` | `bool` | No |  |
+| `marketingInsights` | `dict` | No |  |
 | `status` | `str` | No |  |
 | `timestamp` | `str` | No |  |
-| `validation_result` | `dict` | No |  |
-| `validation_type` | `str` | No |  |
+| `validationResults` | `dict` | No |  |
+| `validationType` | `str` | No |  |
 
 ### Operations
 

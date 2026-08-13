@@ -44,7 +44,7 @@ func TestSecurityEntity(t *testing.T) {
 		// The basic flow consumes synthetic IDs from the fixture. In live mode
 		// without an *_ENTID env override, those IDs hit the live API and 4xx.
 		if setup.syntheticOnly {
-			t.Skip("live entity test uses synthetic IDs from fixture — set DYMOAPIINTRODUCTION_TEST_SECURITY_ENTID JSON to run live")
+			t.Skip("live entity test uses synthetic IDs from fixture — set DYMO_API_INTRODUCTION_TEST_SECURITY_ENTID JSON to run live")
 			return
 		}
 		client := setup.client
@@ -58,7 +58,7 @@ func TestSecurityEntity(t *testing.T) {
 		if err != nil {
 			t.Fatalf("create failed: %v", err)
 		}
-		securityRef01Data = core.ToMapAny(securityRef01DataResult)
+		securityRef01Data = core.ToMapAny(entityData(securityRef01DataResult))
 		if securityRef01Data == nil {
 			t.Fatal("expected create result to be a map")
 		}
@@ -103,38 +103,38 @@ func securityBasicSetup(extra map[string]any) *entityTestSetup {
 	// Detect ENTID env override before envOverride consumes it. When live
 	// mode is on without a real override, the basic test runs against synthetic
 	// IDs from the fixture and 4xx's. Surface this so the test can skip.
-	entidEnvRaw := os.Getenv("DYMOAPIINTRODUCTION_TEST_SECURITY_ENTID")
+	entidEnvRaw := os.Getenv("DYMO_API_INTRODUCTION_TEST_SECURITY_ENTID")
 	idmapOverridden := entidEnvRaw != "" && strings.HasPrefix(strings.TrimSpace(entidEnvRaw), "{")
 
 	env := envOverride(map[string]any{
-		"DYMOAPIINTRODUCTION_TEST_SECURITY_ENTID": idmap,
-		"DYMOAPIINTRODUCTION_TEST_LIVE":      "FALSE",
-		"DYMOAPIINTRODUCTION_TEST_EXPLAIN":   "FALSE",
-		"DYMOAPIINTRODUCTION_APIKEY":         "NONE",
+		"DYMO_API_INTRODUCTION_TEST_SECURITY_ENTID": idmap,
+		"DYMO_API_INTRODUCTION_TEST_LIVE":      "FALSE",
+		"DYMO_API_INTRODUCTION_TEST_EXPLAIN":   "FALSE",
+		"DYMO_API_INTRODUCTION_APIKEY":         "NONE",
 	})
 
-	idmapResolved := core.ToMapAny(env["DYMOAPIINTRODUCTION_TEST_SECURITY_ENTID"])
+	idmapResolved := core.ToMapAny(env["DYMO_API_INTRODUCTION_TEST_SECURITY_ENTID"])
 	if idmapResolved == nil {
 		idmapResolved = core.ToMapAny(idmap)
 	}
 
-	if env["DYMOAPIINTRODUCTION_TEST_LIVE"] == "TRUE" {
+	if env["DYMO_API_INTRODUCTION_TEST_LIVE"] == "TRUE" {
 		mergedOpts := vs.Merge([]any{
 			map[string]any{
-				"apikey": env["DYMOAPIINTRODUCTION_APIKEY"],
+				"apikey": env["DYMO_API_INTRODUCTION_APIKEY"],
 			},
 			extra,
 		})
 		client = sdk.NewDymoApiIntroductionSDK(core.ToMapAny(mergedOpts))
 	}
 
-	live := env["DYMOAPIINTRODUCTION_TEST_LIVE"] == "TRUE"
+	live := env["DYMO_API_INTRODUCTION_TEST_LIVE"] == "TRUE"
 	return &entityTestSetup{
 		client:        client,
 		data:          entityData,
 		idmap:         idmapResolved,
 		env:           env,
-		explain:       env["DYMOAPIINTRODUCTION_TEST_EXPLAIN"] == "TRUE",
+		explain:       env["DYMO_API_INTRODUCTION_TEST_EXPLAIN"] == "TRUE",
 		live:          live,
 		syntheticOnly: live && !idmapOverridden,
 		now:           time.Now().UnixMilli(),

@@ -26,8 +26,8 @@ import {
 describe('SecurityEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when DYMOAPIINTRODUCTION_TEST_LIVE=TRUE.
-  afterEach(liveDelay('DYMOAPIINTRODUCTION_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when DYMO_API_INTRODUCTION_TEST_LIVE=TRUE.
+  afterEach(liveDelay('DYMO_API_INTRODUCTION_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = DymoApiIntroductionSDK.test()
@@ -62,7 +62,7 @@ describe('SecurityEntity', async () => {
     const security_ref01_ent = client.Security()
     let security_ref01_data = setup.data.new.security['security_ref01']
 
-    security_ref01_data = await security_ref01_ent.create(security_ref01_data)
+    security_ref01_data = (await security_ref01_ent.create(security_ref01_data)).data()
     assert(null != security_ref01_data)
 
 

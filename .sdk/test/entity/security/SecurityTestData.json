@@ -2,39 +2,39 @@
   "existing": {
     "security": {
       "SECURITY00": {
-        "ai_insight": {},
+        "aiInsights": {},
         "analytics": {},
         "data": {},
-        "enable_ai": false,
-        "marketing_insight": {},
+        "enableAI": false,
+        "marketingInsights": {},
         "status": "s5f",
         "timestamp": "s60",
-        "validation_result": {},
-        "validation_type": "s62",
+        "validationResults": {},
+        "validationType": "s62",
         "id": "SECURITY00"
       },
       "SECURITY01": {
-        "ai_insight": {},
+        "aiInsights": {},
         "analytics": {},
         "data": {},
-        "enable_ai": false,
-        "marketing_insight": {},
+        "enableAI": false,
+        "marketingInsights": {},
         "status": "sb9",
         "timestamp": "sba",
-        "validation_result": {},
-        "validation_type": "sbc",
+        "validationResults": {},
+        "validationType": "sbc",
         "id": "SECURITY01"
       },
       "SECURITY02": {
-        "ai_insight": {},
+        "aiInsights": {},
         "analytics": {},
         "data": {},
-        "enable_ai": false,
-        "marketing_insight": {},
+        "enableAI": false,
+        "marketingInsights": {},
         "status": "s113",
         "timestamp": "s114",
-        "validation_result": {},
-        "validation_type": "s116",
+        "validationResults": {},
+        "validationType": "s116",
         "id": "SECURITY02"
       }
     }
@@ -42,15 +42,15 @@
   "new": {
     "security": {
       "security_ref01": {
-        "ai_insight": {},
+        "aiInsights": {},
         "analytics": {},
         "data": {},
-        "enable_ai": false,
-        "marketing_insight": {},
+        "enableAI": false,
+        "marketingInsights": {},
         "status": "s16d",
         "timestamp": "s16e",
-        "validation_result": {},
-        "validation_type": "s170"
+        "validationResults": {},
+        "validationType": "s170"
       }
     }
   }

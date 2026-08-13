@@ -91,15 +91,15 @@ local security = client:Security(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ai_insight` | `table` | No |  |
+| `aiInsights` | `table` | No |  |
 | `analytics` | `table` | No |  |
 | `data` | `table` | Yes |  |
-| `enable_ai` | `boolean` | No |  |
-| `marketing_insight` | `table` | No |  |
+| `enableAI` | `boolean` | No |  |
+| `marketingInsights` | `table` | No |  |
 | `status` | `string` | No |  |
 | `timestamp` | `string` | No |  |
-| `validation_result` | `table` | No |  |
-| `validation_type` | `string` | No |  |
+| `validationResults` | `table` | No |  |
+| `validationType` | `string` | No |  |
 
 ### Operations
 

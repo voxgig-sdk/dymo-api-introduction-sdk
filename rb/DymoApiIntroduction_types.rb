@@ -10,7 +10,7 @@
 
 # Security entity data model.
 #
-# @!attribute [rw] ai_insight
+# @!attribute [rw] aiInsights
 #   @return [Hash, nil]
 #
 # @!attribute [rw] analytics
@@ -19,10 +19,10 @@
 # @!attribute [rw] data
 #   @return [Hash]
 #
-# @!attribute [rw] enable_ai
+# @!attribute [rw] enableAI
 #   @return [Boolean, nil]
 #
-# @!attribute [rw] marketing_insight
+# @!attribute [rw] marketingInsights
 #   @return [Hash, nil]
 #
 # @!attribute [rw] status
@@ -31,27 +31,27 @@
 # @!attribute [rw] timestamp
 #   @return [String, nil]
 #
-# @!attribute [rw] validation_result
+# @!attribute [rw] validationResults
 #   @return [Hash, nil]
 #
-# @!attribute [rw] validation_type
+# @!attribute [rw] validationType
 #   @return [String, nil]
 Security = Struct.new(
-  :ai_insight,
+  :aiInsights,
   :analytics,
   :data,
-  :enable_ai,
-  :marketing_insight,
+  :enableAI,
+  :marketingInsights,
   :status,
   :timestamp,
-  :validation_result,
-  :validation_type,
+  :validationResults,
+  :validationType,
   keyword_init: true
 )
 
 # Request payload for Security#create.
 #
-# @!attribute [rw] ai_insight
+# @!attribute [rw] aiInsights
 #   @return [Hash, nil]
 #
 # @!attribute [rw] analytics
@@ -60,10 +60,10 @@ Security = Struct.new(
 # @!attribute [rw] data
 #   @return [Hash]
 #
-# @!attribute [rw] enable_ai
+# @!attribute [rw] enableAI
 #   @return [Boolean, nil]
 #
-# @!attribute [rw] marketing_insight
+# @!attribute [rw] marketingInsights
 #   @return [Hash, nil]
 #
 # @!attribute [rw] status
@@ -72,21 +72,21 @@ Security = Struct.new(
 # @!attribute [rw] timestamp
 #   @return [String, nil]
 #
-# @!attribute [rw] validation_result
+# @!attribute [rw] validationResults
 #   @return [Hash, nil]
 #
-# @!attribute [rw] validation_type
+# @!attribute [rw] validationType
 #   @return [String, nil]
 SecurityCreateData = Struct.new(
-  :ai_insight,
+  :aiInsights,
   :analytics,
   :data,
-  :enable_ai,
-  :marketing_insight,
+  :enableAI,
+  :marketingInsights,
   :status,
   :timestamp,
-  :validation_result,
-  :validation_type,
+  :validationResults,
+  :validationType,
   keyword_init: true
 )
 

@@ -35,7 +35,7 @@ client = DymoApiIntroductionSDK.new({
 ### 4. Create, update, and remove
 
 ```ruby
-# create returns the bare created Security record.
+# create returns the ENTITY — call data_get for the created Security record.
 created = client.Security.create({ "data" => {} })
 
 ```
@@ -115,7 +115,8 @@ Create a mock client for unit testing — no server required:
 ```ruby
 client = DymoApiIntroductionSDK.test
 
-# Entity ops return the bare mock record (raises on error).
+# Entity ops return the ENTITY (raises on error);
+# call data_get for the mock record.
 security = client.Security.create({ "data" => {} })
 puts security
 ```
@@ -234,15 +235,15 @@ returns a result `Hash` with these keys:
 
 | Field | Description |
 | --- | --- |
-| `ai_insight` |  |
+| `aiInsights` |  |
 | `analytics` |  |
 | `data` |  |
-| `enable_ai` |  |
-| `marketing_insight` |  |
+| `enableAI` |  |
+| `marketingInsights` |  |
 | `status` |  |
 | `timestamp` |  |
-| `validation_result` |  |
-| `validation_type` |  |
+| `validationResults` |  |
+| `validationType` |  |
 
 Operations: Create.
 
@@ -267,15 +268,15 @@ Create an instance: `security = client.Security`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `ai_insight` | `Hash` |  |
+| `aiInsights` | `Hash` |  |
 | `analytics` | `Hash` |  |
 | `data` | `Hash` |  |
-| `enable_ai` | `Boolean` |  |
-| `marketing_insight` | `Hash` |  |
+| `enableAI` | `Boolean` |  |
+| `marketingInsights` | `Hash` |  |
 | `status` | `String` |  |
 | `timestamp` | `String` |  |
-| `validation_result` | `Hash` |  |
-| `validation_type` | `String` |  |
+| `validationResults` | `Hash` |  |
+| `validationType` | `String` |  |
 
 #### Example: Create
 

@@ -42,7 +42,7 @@ client = DymoApiIntroductionSDK({
 ### 4. Create, update, and remove
 
 ```python
-# Create — returns the bare created record (a dict)
+# Create — returns the ENTITY (call data_get() for the record)
 created = client.Security().create({"data": {}})
 
 ```
@@ -121,7 +121,8 @@ Create a mock client for unit testing — no server required:
 ```python
 client = DymoApiIntroductionSDK.test()
 
-# Entity ops return the bare record and raise on error.
+# Entity ops return the ENTITY and raises on error;
+# call data_get() for the record.
 security = client.Security().create({"data": {}})
 # security contains the mock response record
 ```
@@ -219,7 +220,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (a `dict` for single-entity
+Entity operations return the ENTITY (call data_get() for the record) (a `dict` for single-entity
 ops, a `list` for `list`) and raise on error. Wrap calls in
 `try`/`except` to handle failures.
 
@@ -241,15 +242,15 @@ On error, `ok` is `False` and `err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `ai_insight` |  |
+| `aiInsights` |  |
 | `analytics` |  |
 | `data` |  |
-| `enable_ai` |  |
-| `marketing_insight` |  |
+| `enableAI` |  |
+| `marketingInsights` |  |
 | `status` |  |
 | `timestamp` |  |
-| `validation_result` |  |
-| `validation_type` |  |
+| `validationResults` |  |
+| `validationType` |  |
 
 Operations: Create.
 
@@ -274,15 +275,15 @@ Create an instance: `security = client.Security()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `ai_insight` | `dict` |  |
+| `aiInsights` | `dict` |  |
 | `analytics` | `dict` |  |
 | `data` | `dict` |  |
-| `enable_ai` | `bool` |  |
-| `marketing_insight` | `dict` |  |
+| `enableAI` | `bool` |  |
+| `marketingInsights` | `dict` |  |
 | `status` | `str` |  |
 | `timestamp` | `str` |  |
-| `validation_result` | `dict` |  |
-| `validation_type` | `str` |  |
+| `validationResults` | `dict` |  |
+| `validationType` | `str` |  |
 
 #### Example: Create
 

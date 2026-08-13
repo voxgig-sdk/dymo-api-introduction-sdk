@@ -38,7 +38,7 @@ const client = new DymoApiIntroductionSDK({
 ### 4. Create, update, and remove
 
 ```ts
-// Create — returns the created Security
+// Create — returns the created Security ENTITY (.data() for the record)
 const created = await client.Security().create({
   data: {},
 })
@@ -120,7 +120,8 @@ Create a mock client for unit testing — no server required:
 const client = DymoApiIntroductionSDK.test()
 
 const security = await client.Security().create({ data: {} })
-// security is a bare entity populated with mock response data
+// security is the entity, populated with mock response data
+// — call security.data() for the record itself
 console.log(security)
 ```
 
@@ -287,15 +288,15 @@ The `prepare()` method returns:
 
 | Field | Description |
 | --- | --- |
-| `ai_insight` |  |
+| `aiInsights` |  |
 | `analytics` |  |
 | `data` |  |
-| `enable_ai` |  |
-| `marketing_insight` |  |
+| `enableAI` |  |
+| `marketingInsights` |  |
 | `status` |  |
 | `timestamp` |  |
-| `validation_result` |  |
-| `validation_type` |  |
+| `validationResults` |  |
+| `validationType` |  |
 
 Operations: create.
 
@@ -320,15 +321,15 @@ Create an instance: `const security = client.Security()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `ai_insight` | `Record<string, any>` |  |
+| `aiInsights` | `Record<string, any>` |  |
 | `analytics` | `Record<string, any>` |  |
 | `data` | `Record<string, any>` |  |
-| `enable_ai` | `boolean` |  |
-| `marketing_insight` | `Record<string, any>` |  |
+| `enableAI` | `boolean` |  |
+| `marketingInsights` | `Record<string, any>` |  |
 | `status` | `string` |  |
 | `timestamp` | `string` |  |
-| `validation_result` | `Record<string, any>` |  |
-| `validation_type` | `string` |  |
+| `validationResults` | `Record<string, any>` |  |
+| `validationType` | `string` |  |
 
 #### Example: Create
 

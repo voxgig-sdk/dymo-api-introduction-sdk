@@ -6,7 +6,7 @@ main: kit: entity: security: {
 
   fields: [
     {
-      name: "ai_insight"
+      name: "aiInsights"
       req: false
       type: "`$OBJECT`"
     }
@@ -21,12 +21,12 @@ main: kit: entity: security: {
       type: "`$OBJECT`"
     }
     {
-      name: "enable_ai"
+      name: "enableAI"
       req: false
       type: "`$BOOLEAN`"
     }
     {
-      name: "marketing_insight"
+      name: "marketingInsights"
       req: false
       type: "`$OBJECT`"
     }
@@ -41,12 +41,12 @@ main: kit: entity: security: {
       type: "`$STRING`"
     }
     {
-      name: "validation_result"
+      name: "validationResults"
       req: false
       type: "`$OBJECT`"
     }
     {
-      name: "validation_type"
+      name: "validationType"
       req: false
       type: "`$STRING`"
     }

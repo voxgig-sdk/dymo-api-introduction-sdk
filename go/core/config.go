@@ -29,7 +29,7 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"active": true,
-						"name": "ai_insight",
+						"name": "aiInsights",
 						"req": false,
 						"type": "`$OBJECT`",
 						"index$": 0,
@@ -50,14 +50,14 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"active": true,
-						"name": "enable_ai",
+						"name": "enableAI",
 						"req": false,
 						"type": "`$BOOLEAN`",
 						"index$": 3,
 					},
 					map[string]any{
 						"active": true,
-						"name": "marketing_insight",
+						"name": "marketingInsights",
 						"req": false,
 						"type": "`$OBJECT`",
 						"index$": 4,
@@ -78,14 +78,14 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"active": true,
-						"name": "validation_result",
+						"name": "validationResults",
 						"req": false,
 						"type": "`$OBJECT`",
 						"index$": 7,
 					},
 					map[string]any{
 						"active": true,
-						"name": "validation_type",
+						"name": "validationType",
 						"req": false,
 						"type": "`$STRING`",
 						"index$": 8,
@@ -100,6 +100,7 @@ func MakeConfig() map[string]any {
 							map[string]any{
 								"active": true,
 								"args": map[string]any{},
+								"kind": "http",
 								"method": "POST",
 								"orig": "/validate",
 								"parts": []any{
@@ -113,7 +114,6 @@ func MakeConfig() map[string]any {
 								"index$": 0,
 							},
 						},
-						"key$": "create",
 					},
 				},
 				"relations": map[string]any{

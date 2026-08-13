@@ -43,8 +43,8 @@ class DymoApiIntroductionTestRunner
 
     public static function env_override(array $m): array
     {
-        $live = self::getenv('DYMOAPIINTRODUCTION_TEST_LIVE');
-        $override = self::getenv('DYMOAPIINTRODUCTION_TEST_OVERRIDE');
+        $live = self::getenv('DYMO_API_INTRODUCTION_TEST_LIVE');
+        $override = self::getenv('DYMO_API_INTRODUCTION_TEST_OVERRIDE');
 
         if ($live === 'TRUE' || $override === 'TRUE') {
             foreach (array_keys($m) as $key) {
@@ -63,9 +63,9 @@ class DymoApiIntroductionTestRunner
             }
         }
 
-        $explain = self::getenv('DYMOAPIINTRODUCTION_TEST_EXPLAIN');
+        $explain = self::getenv('DYMO_API_INTRODUCTION_TEST_EXPLAIN');
         if ($explain !== null && $explain !== '') {
-            $m['DYMOAPIINTRODUCTION_TEST_EXPLAIN'] = $explain;
+            $m['DYMO_API_INTRODUCTION_TEST_EXPLAIN'] = $explain;
         }
 
         return $m;

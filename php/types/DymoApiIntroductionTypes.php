@@ -15,28 +15,28 @@ declare(strict_types=1);
 /** Security entity data model. */
 class Security
 {
-    public ?array $ai_insight = null;
+    public ?array $aiInsights = null;
     public ?array $analytics = null;
     public array $data;
-    public ?bool $enable_ai = null;
-    public ?array $marketing_insight = null;
+    public ?bool $enableAI = null;
+    public ?array $marketingInsights = null;
     public ?string $status = null;
     public ?string $timestamp = null;
-    public ?array $validation_result = null;
-    public ?string $validation_type = null;
+    public ?array $validationResults = null;
+    public ?string $validationType = null;
 }
 
 /** Request payload for Security#create. */
 class SecurityCreateData
 {
-    public ?array $ai_insight = null;
+    public ?array $aiInsights = null;
     public ?array $analytics = null;
     public array $data;
-    public ?bool $enable_ai = null;
-    public ?array $marketing_insight = null;
+    public ?bool $enableAI = null;
+    public ?array $marketingInsights = null;
     public ?string $status = null;
     public ?string $timestamp = null;
-    public ?array $validation_result = null;
-    public ?string $validation_type = null;
+    public ?array $validationResults = null;
+    public ?string $validationType = null;
 }
 

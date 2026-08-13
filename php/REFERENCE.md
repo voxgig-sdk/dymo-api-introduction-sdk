@@ -93,15 +93,15 @@ $security = $client->Security();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ai_insight` | `array` | No |  |
+| `aiInsights` | `array` | No |  |
 | `analytics` | `array` | No |  |
 | `data` | `array` | Yes |  |
-| `enable_ai` | `bool` | No |  |
-| `marketing_insight` | `array` | No |  |
+| `enableAI` | `bool` | No |  |
+| `marketingInsights` | `array` | No |  |
 | `status` | `string` | No |  |
 | `timestamp` | `string` | No |  |
-| `validation_result` | `array` | No |  |
-| `validation_type` | `string` | No |  |
+| `validationResults` | `array` | No |  |
+| `validationType` | `string` | No |  |
 
 ### Operations
 

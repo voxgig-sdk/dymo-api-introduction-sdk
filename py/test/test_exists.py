@@ -1,4 +1,4 @@
-# ProjectName SDK exists test
+# DymoApiIntroduction SDK exists test
 
 import pytest
 from dymoapiintroduction_sdk import DymoApiIntroductionSDK

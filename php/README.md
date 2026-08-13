@@ -36,7 +36,7 @@ $client = new DymoApiIntroductionSDK([
 ### 4. Create, update, and remove
 
 ```php
-// create() returns the bare created Security record.
+// create() returns the ENTITY — call data_get() for the created Security record.
 $created = $client->Security()->create(["data" => []]);
 
 ```
@@ -49,7 +49,7 @@ Entity operations throw a `\Throwable` on failure, so wrap them in
 
 ```php
 try {
-    $security = $client->Security()->create(["data" => {}]);
+    $security = $client->Security()->create(["data" => []]);
 } catch (\Throwable $err) {
     echo "Error: " . $err->getMessage();
 }
@@ -121,7 +121,8 @@ Create a mock client for unit testing — no server required:
 ```php
 $client = DymoApiIntroductionSDK::test();
 
-// Entity ops return the bare mock record (throws on error).
+// Entity ops return the ENTITY (throws on error);
+// call data_get() for the mock record.
 $security = $client->Security()->create(["data" => []]);
 print_r($security);
 ```
@@ -222,7 +223,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (an `array` for single-entity
+Entity operations return the ENTITY (call data_get() for the record) (an `array` for single-entity
 ops, a `list` for `list`) and throw on error. Wrap calls in
 `try`/`catch` to handle failures.
 
@@ -244,15 +245,15 @@ On error, `ok` is `false` and `$err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `ai_insight` |  |
+| `aiInsights` |  |
 | `analytics` |  |
 | `data` |  |
-| `enable_ai` |  |
-| `marketing_insight` |  |
+| `enableAI` |  |
+| `marketingInsights` |  |
 | `status` |  |
 | `timestamp` |  |
-| `validation_result` |  |
-| `validation_type` |  |
+| `validationResults` |  |
+| `validationType` |  |
 
 Operations: Create.
 
@@ -277,15 +278,15 @@ Create an instance: `$security = $client->Security();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `ai_insight` | `array` |  |
+| `aiInsights` | `array` |  |
 | `analytics` | `array` |  |
 | `data` | `array` |  |
-| `enable_ai` | `bool` |  |
-| `marketing_insight` | `array` |  |
+| `enableAI` | `bool` |  |
+| `marketingInsights` | `array` |  |
 | `status` | `string` |  |
 | `timestamp` | `string` |  |
-| `validation_result` | `array` |  |
-| `validation_type` | `string` |  |
+| `validationResults` | `array` |  |
+| `validationType` | `string` |  |
 
 #### Example: Create
 
@@ -373,7 +374,7 @@ stores the returned data and match criteria internally.
 
 ```php
 $security = $client->Security();
-$security->create(["data" => {}]);
+$security->create(["data" => []]);
 
 // $security->data_get() now returns the security data from the last create
 // $security->match_get() returns the last match criteria

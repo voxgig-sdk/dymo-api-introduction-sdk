@@ -6,9 +6,9 @@ import time
 
 import pytest
 
-from utility.voxgig_struct import voxgig_struct as vs
+from dymoapiintroduction_sdk.utility.voxgig_struct import voxgig_struct as vs
 from dymoapiintroduction_sdk import DymoApiIntroductionSDK
-from core import helpers
+from dymoapiintroduction_sdk.core import helpers
 
 _TEST_DIR = os.path.dirname(os.path.abspath(__file__))
 from test import runner
@@ -36,7 +36,7 @@ class TestSecurityEntity:
         # without an *_ENTID env override, those IDs hit the live API and 4xx.
         if setup.get("synthetic_only"):
             pytest.skip("live entity test uses synthetic IDs from fixture — "
-                        "set DYMOAPIINTRODUCTION_TEST_SECURITY_ENTID JSON to run live")
+                        "set DYMO_API_INTRODUCTION_TEST_SECURITY_ENTID JSON to run live")
         client = setup["client"]
 
         # CREATE
@@ -44,7 +44,7 @@ class TestSecurityEntity:
         security_ref01_data = helpers.to_map(vs.getprop(
             vs.getpath(setup["data"], "new.security"), "security_ref01"))
 
-        security_ref01_data = helpers.to_map(security_ref01_ent.create(security_ref01_data, None))
+        security_ref01_data = helpers.to_map(runner.entity_data(security_ref01_ent.create(security_ref01_data, None)))
         assert security_ref01_data is not None
 
 
@@ -78,37 +78,37 @@ def _security_basic_setup(extra):
     # mode is on without a real override, the basic test runs against synthetic
     # IDs from the fixture and 4xx's. We surface this so the test can skip.
     _entid_env_raw = os.environ.get(
-        "DYMOAPIINTRODUCTION_TEST_SECURITY_ENTID")
+        "DYMO_API_INTRODUCTION_TEST_SECURITY_ENTID")
     _idmap_overridden = _entid_env_raw is not None and _entid_env_raw.strip().startswith("{")
 
     env = runner.env_override({
-        "DYMOAPIINTRODUCTION_TEST_SECURITY_ENTID": idmap,
-        "DYMOAPIINTRODUCTION_TEST_LIVE": "FALSE",
-        "DYMOAPIINTRODUCTION_TEST_EXPLAIN": "FALSE",
-        "DYMOAPIINTRODUCTION_APIKEY": "NONE",
+        "DYMO_API_INTRODUCTION_TEST_SECURITY_ENTID": idmap,
+        "DYMO_API_INTRODUCTION_TEST_LIVE": "FALSE",
+        "DYMO_API_INTRODUCTION_TEST_EXPLAIN": "FALSE",
+        "DYMO_API_INTRODUCTION_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
-        env.get("DYMOAPIINTRODUCTION_TEST_SECURITY_ENTID"))
+        env.get("DYMO_API_INTRODUCTION_TEST_SECURITY_ENTID"))
     if idmap_resolved is None:
         idmap_resolved = helpers.to_map(idmap)
 
-    if env.get("DYMOAPIINTRODUCTION_TEST_LIVE") == "TRUE":
+    if env.get("DYMO_API_INTRODUCTION_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("DYMOAPIINTRODUCTION_APIKEY"),
+                "apikey": env.get("DYMO_API_INTRODUCTION_APIKEY"),
             },
             extra or {},
         ])
         client = DymoApiIntroductionSDK(helpers.to_map(merged_opts))
 
-    _live = env.get("DYMOAPIINTRODUCTION_TEST_LIVE") == "TRUE"
+    _live = env.get("DYMO_API_INTRODUCTION_TEST_LIVE") == "TRUE"
     return {
         "client": client,
         "data": entity_data,
         "idmap": idmap_resolved,
         "env": env,
-        "explain": env.get("DYMOAPIINTRODUCTION_TEST_EXPLAIN") == "TRUE",
+        "explain": env.get("DYMO_API_INTRODUCTION_TEST_EXPLAIN") == "TRUE",
         "live": _live,
         "synthetic_only": _live and not _idmap_overridden,
         "now": int(time.time() * 1000),

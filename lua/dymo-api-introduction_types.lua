@@ -7,26 +7,26 @@
 -- edit by hand.
 
 ---@class Security
----@field ai_insight? table
+---@field aiInsights? table
 ---@field analytics? table
 ---@field data table
----@field enable_ai? boolean
----@field marketing_insight? table
+---@field enableAI? boolean
+---@field marketingInsights? table
 ---@field status? string
 ---@field timestamp? string
----@field validation_result? table
----@field validation_type? string
+---@field validationResults? table
+---@field validationType? string
 
 ---@class SecurityCreateData
----@field ai_insight? table
+---@field aiInsights? table
 ---@field analytics? table
 ---@field data table
----@field enable_ai? boolean
----@field marketing_insight? table
+---@field enableAI? boolean
+---@field marketingInsights? table
 ---@field status? string
 ---@field timestamp? string
----@field validation_result? table
----@field validation_type? string
+---@field validationResults? table
+---@field validationType? string
 
 local M = {}
 

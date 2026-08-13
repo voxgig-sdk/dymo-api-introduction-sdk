@@ -99,15 +99,15 @@ fmt.Println(security.GetName()) // "security"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ai_insight` | `map[string]any` | No |  |
+| `aiInsights` | `map[string]any` | No |  |
 | `analytics` | `map[string]any` | No |  |
 | `data` | `map[string]any` | Yes |  |
-| `enable_ai` | `bool` | No |  |
-| `marketing_insight` | `map[string]any` | No |  |
+| `enableAI` | `bool` | No |  |
+| `marketingInsights` | `map[string]any` | No |  |
 | `status` | `string` | No |  |
 | `timestamp` | `string` | No |  |
-| `validation_result` | `map[string]any` | No |  |
-| `validation_type` | `string` | No |  |
+| `validationResults` | `map[string]any` | No |  |
+| `validationType` | `string` | No |  |
 
 ### Operations
 

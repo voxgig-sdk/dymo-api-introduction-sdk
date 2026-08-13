@@ -217,9 +217,9 @@ data **directly** — there is no wrapper:
 
 Check `err` first (it is non-`nil` on failure), then use `value`:
 
-    local security, err = client:Security():load()
+    local security, err = client:Security():list()
     if err then error(err) end
-    -- security is the loaded record
+    -- security is the record list
 
 Only `direct()` returns a response envelope — a `table` with `ok`,
 `status`, `headers`, and `data` keys.
@@ -230,15 +230,15 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 
 | Field | Description |
 | --- | --- |
-| `ai_insight` |  |
+| `aiInsights` |  |
 | `analytics` |  |
 | `data` |  |
-| `enable_ai` |  |
-| `marketing_insight` |  |
+| `enableAI` |  |
+| `marketingInsights` |  |
 | `status` |  |
 | `timestamp` |  |
-| `validation_result` |  |
-| `validation_type` |  |
+| `validationResults` |  |
+| `validationType` |  |
 
 Operations: Create.
 
@@ -263,15 +263,15 @@ Create an instance: `local security = client:Security(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `ai_insight` | `table` |  |
+| `aiInsights` | `table` |  |
 | `analytics` | `table` |  |
 | `data` | `table` |  |
-| `enable_ai` | `boolean` |  |
-| `marketing_insight` | `table` |  |
+| `enableAI` | `boolean` |  |
+| `marketingInsights` | `table` |  |
 | `status` | `string` |  |
 | `timestamp` | `string` |  |
-| `validation_result` | `table` |  |
-| `validation_type` | `string` |  |
+| `validationResults` | `table` |  |
+| `validationType` | `string` |  |
 
 #### Example: Create
 

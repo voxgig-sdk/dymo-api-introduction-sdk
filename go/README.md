@@ -263,15 +263,15 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 
 | Field | Description |
 | --- | --- |
-| `"ai_insight"` |  |
+| `"aiInsights"` |  |
 | `"analytics"` |  |
 | `"data"` |  |
-| `"enable_ai"` |  |
-| `"marketing_insight"` |  |
+| `"enableAI"` |  |
+| `"marketingInsights"` |  |
 | `"status"` |  |
 | `"timestamp"` |  |
-| `"validation_result"` |  |
-| `"validation_type"` |  |
+| `"validationResults"` |  |
+| `"validationType"` |  |
 
 Operations: Create.
 
@@ -296,15 +296,15 @@ Create an instance: `security := client.Security(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `ai_insight` | `map[string]any` |  |
+| `aiInsights` | `map[string]any` |  |
 | `analytics` | `map[string]any` |  |
 | `data` | `map[string]any` |  |
-| `enable_ai` | `bool` |  |
-| `marketing_insight` | `map[string]any` |  |
+| `enableAI` | `bool` |  |
+| `marketingInsights` | `map[string]any` |  |
 | `status` | `string` |  |
 | `timestamp` | `string` |  |
-| `validation_result` | `map[string]any` |  |
-| `validation_type` | `string` |  |
+| `validationResults` | `map[string]any` |  |
+| `validationType` | `string` |  |
 
 #### Example: Create
 
