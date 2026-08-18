@@ -23,8 +23,8 @@ class DymoApiIntroductionSDK:
         utility = DymoApiIntroductionUtility()
         self._utility = utility
 
-        from dymoapiintroduction_sdk.config import make_config
-        config = make_config()
+        from dymoapiintroduction_sdk.config import shared_config
+        config = shared_config()
 
         self._rootctx = utility.make_context({
             "client": self,

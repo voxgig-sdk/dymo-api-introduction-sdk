@@ -15,7 +15,7 @@ require_relative "../DymoApiIntroduction_sdk"
 module DymoApiIntroductionFeatureHarness
   # True when this SDK was generated with the named feature.
   def self.has_feature?(name)
-    f = DymoApiIntroductionConfig.make_config["feature"]
+    f = DymoApiIntroductionConfig.shared_config["feature"]
     f.is_a?(Hash) && !f[name].nil?
   end
 

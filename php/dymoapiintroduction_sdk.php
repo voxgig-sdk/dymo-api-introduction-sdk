@@ -40,7 +40,7 @@ class DymoApiIntroductionSDK
         $utility = new DymoApiIntroductionUtility();
         $this->_utility = $utility;
 
-        $config = DymoApiIntroductionConfig::make_config();
+        $config = DymoApiIntroductionConfig::shared_config();
 
         $this->_rootctx = ($utility->make_context)([
             "client" => $this,

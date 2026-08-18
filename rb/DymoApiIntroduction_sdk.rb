@@ -28,7 +28,7 @@ class DymoApiIntroductionSDK
     utility = DymoApiIntroductionUtility.new
     @_utility = utility
 
-    config = DymoApiIntroductionConfig.make_config
+    config = DymoApiIntroductionConfig.shared_config
 
     @_rootctx = utility.make_context.call({
       "client" => self,
