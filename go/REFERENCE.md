@@ -99,15 +99,15 @@ fmt.Println(security.GetName()) // "security"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `aiInsights` | `map[string]any` | No |  |
-| `analytics` | `map[string]any` | No |  |
-| `data` | `map[string]any` | Yes |  |
-| `enableAI` | `bool` | No |  |
-| `marketingInsights` | `map[string]any` | No |  |
-| `status` | `string` | No |  |
-| `timestamp` | `string` | No |  |
+| `aiInsights` | `map[string]any` | No | AI-powered insights and recommendations |
+| `analytics` | `map[string]any` | No | Analytics data and customer behavior insights |
+| `data` | `map[string]any` | Yes | The data to be validated |
+| `enableAI` | `bool` | No | Enable AI-powered analysis |
+| `marketingInsights` | `map[string]any` | No | Marketing-related insights |
+| `status` | `string` | No | Validation status |
+| `timestamp` | `string` | No | Timestamp of the validation |
 | `validationResults` | `map[string]any` | No |  |
-| `validationType` | `string` | No |  |
+| `validationType` | `string` | No | Type of validation to perform |
 
 ### Operations
 

@@ -230,15 +230,15 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 
 | Field | Description |
 | --- | --- |
-| `aiInsights` |  |
-| `analytics` |  |
-| `data` |  |
-| `enableAI` |  |
-| `marketingInsights` |  |
-| `status` |  |
-| `timestamp` |  |
+| `aiInsights` | AI-powered insights and recommendations |
+| `analytics` | Analytics data and customer behavior insights |
+| `data` | The data to be validated |
+| `enableAI` | Enable AI-powered analysis |
+| `marketingInsights` | Marketing-related insights |
+| `status` | Validation status |
+| `timestamp` | Timestamp of the validation |
 | `validationResults` |  |
-| `validationType` |  |
+| `validationType` | Type of validation to perform |
 
 Operations: Create.
 
@@ -263,15 +263,15 @@ Create an instance: `local security = client:Security(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `aiInsights` | `table` |  |
-| `analytics` | `table` |  |
-| `data` | `table` |  |
-| `enableAI` | `boolean` |  |
-| `marketingInsights` | `table` |  |
-| `status` | `string` |  |
-| `timestamp` | `string` |  |
+| `aiInsights` | `table` | AI-powered insights and recommendations |
+| `analytics` | `table` | Analytics data and customer behavior insights |
+| `data` | `table` | The data to be validated |
+| `enableAI` | `boolean` | Enable AI-powered analysis |
+| `marketingInsights` | `table` | Marketing-related insights |
+| `status` | `string` | Validation status |
+| `timestamp` | `string` | Timestamp of the validation |
 | `validationResults` | `table` |  |
-| `validationType` | `string` |  |
+| `validationType` | `string` | Type of validation to perform |
 
 #### Example: Create
 

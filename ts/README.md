@@ -9,7 +9,7 @@ The API is exposed as capitalised, semantic **Entities** — e.g.
 instead of raw URL paths and query parameters. This keeps the surface
 predictable and low-friction for both humans and AI agents.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go`, `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb` — see
 > the [top-level README](../README.md).
 
 
@@ -288,15 +288,15 @@ The `prepare()` method returns:
 
 | Field | Description |
 | --- | --- |
-| `aiInsights` |  |
-| `analytics` |  |
-| `data` |  |
-| `enableAI` |  |
-| `marketingInsights` |  |
-| `status` |  |
-| `timestamp` |  |
+| `aiInsights` | AI-powered insights and recommendations |
+| `analytics` | Analytics data and customer behavior insights |
+| `data` | The data to be validated |
+| `enableAI` | Enable AI-powered analysis |
+| `marketingInsights` | Marketing-related insights |
+| `status` | Validation status |
+| `timestamp` | Timestamp of the validation |
 | `validationResults` |  |
-| `validationType` |  |
+| `validationType` | Type of validation to perform |
 
 Operations: create.
 
@@ -321,15 +321,15 @@ Create an instance: `const security = client.Security()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `aiInsights` | `Record<string, any>` |  |
-| `analytics` | `Record<string, any>` |  |
-| `data` | `Record<string, any>` |  |
-| `enableAI` | `boolean` |  |
-| `marketingInsights` | `Record<string, any>` |  |
-| `status` | `string` |  |
-| `timestamp` | `string` |  |
+| `aiInsights` | `Record<string, any>` | AI-powered insights and recommendations |
+| `analytics` | `Record<string, any>` | Analytics data and customer behavior insights |
+| `data` | `Record<string, any>` | The data to be validated |
+| `enableAI` | `boolean` | Enable AI-powered analysis |
+| `marketingInsights` | `Record<string, any>` | Marketing-related insights |
+| `status` | `string` | Validation status |
+| `timestamp` | `string` | Timestamp of the validation |
 | `validationResults` | `Record<string, any>` |  |
-| `validationType` | `string` |  |
+| `validationType` | `string` | Type of validation to perform |
 
 #### Example: Create
 

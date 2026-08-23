@@ -245,15 +245,15 @@ On error, `ok` is `false` and `$err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `aiInsights` |  |
-| `analytics` |  |
-| `data` |  |
-| `enableAI` |  |
-| `marketingInsights` |  |
-| `status` |  |
-| `timestamp` |  |
+| `aiInsights` | AI-powered insights and recommendations |
+| `analytics` | Analytics data and customer behavior insights |
+| `data` | The data to be validated |
+| `enableAI` | Enable AI-powered analysis |
+| `marketingInsights` | Marketing-related insights |
+| `status` | Validation status |
+| `timestamp` | Timestamp of the validation |
 | `validationResults` |  |
-| `validationType` |  |
+| `validationType` | Type of validation to perform |
 
 Operations: Create.
 
@@ -278,15 +278,15 @@ Create an instance: `$security = $client->Security();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `aiInsights` | `array` |  |
-| `analytics` | `array` |  |
-| `data` | `array` |  |
-| `enableAI` | `bool` |  |
-| `marketingInsights` | `array` |  |
-| `status` | `string` |  |
-| `timestamp` | `string` |  |
+| `aiInsights` | `array` | AI-powered insights and recommendations |
+| `analytics` | `array` | Analytics data and customer behavior insights |
+| `data` | `array` | The data to be validated |
+| `enableAI` | `bool` | Enable AI-powered analysis |
+| `marketingInsights` | `array` | Marketing-related insights |
+| `status` | `string` | Validation status |
+| `timestamp` | `string` | Timestamp of the validation |
 | `validationResults` | `array` |  |
-| `validationType` | `string` |  |
+| `validationType` | `string` | Type of validation to perform |
 
 #### Example: Create
 

@@ -7,6 +7,9 @@ local function make_config()
   return {
     main = {
       name = "DymoApiIntroduction",
+      slug = "dymo-api-introduction",
+      version = "0.0.1",
+      target = "lua",
     },
     feature = {
       ["test"] = {
@@ -32,31 +35,38 @@ local function make_config()
         ["fields"] = {
           {
             ["name"] = "aiInsights",
+            ["short"] = "AI-powered insights and recommendations",
             ["type"] = "`$OBJECT`",
           },
           {
             ["name"] = "analytics",
+            ["short"] = "Analytics data and customer behavior insights",
             ["type"] = "`$OBJECT`",
           },
           {
             ["name"] = "data",
             ["req"] = true,
+            ["short"] = "The data to be validated",
             ["type"] = "`$OBJECT`",
           },
           {
             ["name"] = "enableAI",
+            ["short"] = "Enable AI-powered analysis",
             ["type"] = "`$BOOLEAN`",
           },
           {
             ["name"] = "marketingInsights",
+            ["short"] = "Marketing-related insights",
             ["type"] = "`$OBJECT`",
           },
           {
             ["name"] = "status",
+            ["short"] = "Validation status",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "timestamp",
+            ["short"] = "Timestamp of the validation",
             ["type"] = "`$STRING`",
           },
           {
@@ -65,6 +75,7 @@ local function make_config()
           },
           {
             ["name"] = "validationType",
+            ["short"] = "Type of validation to perform",
             ["type"] = "`$STRING`",
           },
         },

@@ -117,15 +117,15 @@ const security = client.Security()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `aiInsights` | `Record<string, any>` | No |  |
-| `analytics` | `Record<string, any>` | No |  |
-| `data` | `Record<string, any>` | Yes |  |
-| `enableAI` | `boolean` | No |  |
-| `marketingInsights` | `Record<string, any>` | No |  |
-| `status` | `string` | No |  |
-| `timestamp` | `string` | No |  |
+| `aiInsights` | `Record<string, any>` | No | AI-powered insights and recommendations |
+| `analytics` | `Record<string, any>` | No | Analytics data and customer behavior insights |
+| `data` | `Record<string, any>` | Yes | The data to be validated |
+| `enableAI` | `boolean` | No | Enable AI-powered analysis |
+| `marketingInsights` | `Record<string, any>` | No | Marketing-related insights |
+| `status` | `string` | No | Validation status |
+| `timestamp` | `string` | No | Timestamp of the validation |
 | `validationResults` | `Record<string, any>` | No |  |
-| `validationType` | `string` | No |  |
+| `validationType` | `string` | No | Type of validation to perform |
 
 ### Operations
 

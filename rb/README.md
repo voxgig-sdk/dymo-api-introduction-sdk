@@ -235,15 +235,15 @@ returns a result `Hash` with these keys:
 
 | Field | Description |
 | --- | --- |
-| `aiInsights` |  |
-| `analytics` |  |
-| `data` |  |
-| `enableAI` |  |
-| `marketingInsights` |  |
-| `status` |  |
-| `timestamp` |  |
+| `aiInsights` | AI-powered insights and recommendations |
+| `analytics` | Analytics data and customer behavior insights |
+| `data` | The data to be validated |
+| `enableAI` | Enable AI-powered analysis |
+| `marketingInsights` | Marketing-related insights |
+| `status` | Validation status |
+| `timestamp` | Timestamp of the validation |
 | `validationResults` |  |
-| `validationType` |  |
+| `validationType` | Type of validation to perform |
 
 Operations: Create.
 
@@ -268,15 +268,15 @@ Create an instance: `security = client.Security`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `aiInsights` | `Hash` |  |
-| `analytics` | `Hash` |  |
-| `data` | `Hash` |  |
-| `enableAI` | `Boolean` |  |
-| `marketingInsights` | `Hash` |  |
-| `status` | `String` |  |
-| `timestamp` | `String` |  |
+| `aiInsights` | `Hash` | AI-powered insights and recommendations |
+| `analytics` | `Hash` | Analytics data and customer behavior insights |
+| `data` | `Hash` | The data to be validated |
+| `enableAI` | `Boolean` | Enable AI-powered analysis |
+| `marketingInsights` | `Hash` | Marketing-related insights |
+| `status` | `String` | Validation status |
+| `timestamp` | `String` | Timestamp of the validation |
 | `validationResults` | `Hash` |  |
-| `validationType` | `String` |  |
+| `validationType` | `String` | Type of validation to perform |
 
 #### Example: Create
 

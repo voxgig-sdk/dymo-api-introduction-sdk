@@ -242,15 +242,15 @@ On error, `ok` is `False` and `err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `aiInsights` |  |
-| `analytics` |  |
-| `data` |  |
-| `enableAI` |  |
-| `marketingInsights` |  |
-| `status` |  |
-| `timestamp` |  |
+| `aiInsights` | AI-powered insights and recommendations |
+| `analytics` | Analytics data and customer behavior insights |
+| `data` | The data to be validated |
+| `enableAI` | Enable AI-powered analysis |
+| `marketingInsights` | Marketing-related insights |
+| `status` | Validation status |
+| `timestamp` | Timestamp of the validation |
 | `validationResults` |  |
-| `validationType` |  |
+| `validationType` | Type of validation to perform |
 
 Operations: Create.
 
@@ -275,15 +275,15 @@ Create an instance: `security = client.Security()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `aiInsights` | `dict` |  |
-| `analytics` | `dict` |  |
-| `data` | `dict` |  |
-| `enableAI` | `bool` |  |
-| `marketingInsights` | `dict` |  |
-| `status` | `str` |  |
-| `timestamp` | `str` |  |
+| `aiInsights` | `dict` | AI-powered insights and recommendations |
+| `analytics` | `dict` | Analytics data and customer behavior insights |
+| `data` | `dict` | The data to be validated |
+| `enableAI` | `bool` | Enable AI-powered analysis |
+| `marketingInsights` | `dict` | Marketing-related insights |
+| `status` | `str` | Validation status |
+| `timestamp` | `str` | Timestamp of the validation |
 | `validationResults` | `dict` |  |
-| `validationType` | `str` |  |
+| `validationType` | `str` | Type of validation to perform |
 
 #### Example: Create
 

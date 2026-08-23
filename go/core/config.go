@@ -11,6 +11,9 @@ func MakeConfig() map[string]any {
 	return map[string]any{
 		"main": map[string]any{
 			"name": "DymoApiIntroduction",
+			"slug": "dymo-api-introduction",
+			"version": "0.0.1",
+			"target": "go",
 		},
 		"feature": map[string]any{
 			"test": map[string]any{
@@ -36,31 +39,38 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "aiInsights",
+						"short": "AI-powered insights and recommendations",
 						"type": "`$OBJECT`",
 					},
 					map[string]any{
 						"name": "analytics",
+						"short": "Analytics data and customer behavior insights",
 						"type": "`$OBJECT`",
 					},
 					map[string]any{
 						"name": "data",
 						"req": true,
+						"short": "The data to be validated",
 						"type": "`$OBJECT`",
 					},
 					map[string]any{
 						"name": "enableAI",
+						"short": "Enable AI-powered analysis",
 						"type": "`$BOOLEAN`",
 					},
 					map[string]any{
 						"name": "marketingInsights",
+						"short": "Marketing-related insights",
 						"type": "`$OBJECT`",
 					},
 					map[string]any{
 						"name": "status",
+						"short": "Validation status",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "timestamp",
+						"short": "Timestamp of the validation",
 						"type": "`$STRING`",
 					},
 					map[string]any{
@@ -69,6 +79,7 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"name": "validationType",
+						"short": "Type of validation to perform",
 						"type": "`$STRING`",
 					},
 				},

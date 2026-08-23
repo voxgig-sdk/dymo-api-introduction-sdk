@@ -6,7 +6,7 @@ The Golang SDK for the DymoApiIntroduction API — an entity-oriented client usi
 
 It exposes the API as capitalised, semantic **Entities** — e.g. `client.Security(nil)` — each with the same small set of operations (`Create`) instead of raw URL paths and query strings. You call meaning, not endpoints, which keeps the cognitive load low.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb`, `ts` — see
 > the [top-level README](../README.md).
 
 
@@ -263,15 +263,15 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 
 | Field | Description |
 | --- | --- |
-| `"aiInsights"` |  |
-| `"analytics"` |  |
-| `"data"` |  |
-| `"enableAI"` |  |
-| `"marketingInsights"` |  |
-| `"status"` |  |
-| `"timestamp"` |  |
+| `"aiInsights"` | AI-powered insights and recommendations |
+| `"analytics"` | Analytics data and customer behavior insights |
+| `"data"` | The data to be validated |
+| `"enableAI"` | Enable AI-powered analysis |
+| `"marketingInsights"` | Marketing-related insights |
+| `"status"` | Validation status |
+| `"timestamp"` | Timestamp of the validation |
 | `"validationResults"` |  |
-| `"validationType"` |  |
+| `"validationType"` | Type of validation to perform |
 
 Operations: Create.
 
@@ -296,15 +296,15 @@ Create an instance: `security := client.Security(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `aiInsights` | `map[string]any` |  |
-| `analytics` | `map[string]any` |  |
-| `data` | `map[string]any` |  |
-| `enableAI` | `bool` |  |
-| `marketingInsights` | `map[string]any` |  |
-| `status` | `string` |  |
-| `timestamp` | `string` |  |
+| `aiInsights` | `map[string]any` | AI-powered insights and recommendations |
+| `analytics` | `map[string]any` | Analytics data and customer behavior insights |
+| `data` | `map[string]any` | The data to be validated |
+| `enableAI` | `bool` | Enable AI-powered analysis |
+| `marketingInsights` | `map[string]any` | Marketing-related insights |
+| `status` | `string` | Validation status |
+| `timestamp` | `string` | Timestamp of the validation |
 | `validationResults` | `map[string]any` |  |
-| `validationType` | `string` |  |
+| `validationType` | `string` | Type of validation to perform |
 
 #### Example: Create
 

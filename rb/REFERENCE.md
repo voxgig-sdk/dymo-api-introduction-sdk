@@ -94,15 +94,15 @@ security = client.Security
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `aiInsights` | `Hash` | No |  |
-| `analytics` | `Hash` | No |  |
-| `data` | `Hash` | Yes |  |
-| `enableAI` | `Boolean` | No |  |
-| `marketingInsights` | `Hash` | No |  |
-| `status` | `String` | No |  |
-| `timestamp` | `String` | No |  |
+| `aiInsights` | `Hash` | No | AI-powered insights and recommendations |
+| `analytics` | `Hash` | No | Analytics data and customer behavior insights |
+| `data` | `Hash` | Yes | The data to be validated |
+| `enableAI` | `Boolean` | No | Enable AI-powered analysis |
+| `marketingInsights` | `Hash` | No | Marketing-related insights |
+| `status` | `String` | No | Validation status |
+| `timestamp` | `String` | No | Timestamp of the validation |
 | `validationResults` | `Hash` | No |  |
-| `validationType` | `String` | No |  |
+| `validationType` | `String` | No | Type of validation to perform |
 
 ### Operations
 

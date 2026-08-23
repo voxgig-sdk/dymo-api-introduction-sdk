@@ -36,42 +36,49 @@
               "active": true,
               "name": "aiInsights",
               "req": false,
+              "short": "AI-powered insights and recommendations",
               "type": "`$OBJECT`"
             },
             {
               "active": true,
               "name": "analytics",
               "req": false,
+              "short": "Analytics data and customer behavior insights",
               "type": "`$OBJECT`"
             },
             {
               "active": true,
               "name": "data",
               "req": true,
+              "short": "The data to be validated",
               "type": "`$OBJECT`"
             },
             {
               "active": true,
               "name": "enableAI",
               "req": false,
+              "short": "Enable AI-powered analysis",
               "type": "`$BOOLEAN`"
             },
             {
               "active": true,
               "name": "marketingInsights",
               "req": false,
+              "short": "Marketing-related insights",
               "type": "`$OBJECT`"
             },
             {
               "active": true,
               "name": "status",
               "req": false,
+              "short": "Validation status",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "timestamp",
               "req": false,
+              "short": "Timestamp of the validation",
               "type": "`$STRING`"
             },
             {
@@ -84,6 +91,7 @@
               "active": true,
               "name": "validationType",
               "req": false,
+              "short": "Type of validation to perform",
               "type": "`$STRING`"
             }
           ],

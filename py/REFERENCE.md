@@ -88,15 +88,15 @@ security = client.Security()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `aiInsights` | `dict` | No |  |
-| `analytics` | `dict` | No |  |
-| `data` | `dict` | Yes |  |
-| `enableAI` | `bool` | No |  |
-| `marketingInsights` | `dict` | No |  |
-| `status` | `str` | No |  |
-| `timestamp` | `str` | No |  |
+| `aiInsights` | `dict` | No | AI-powered insights and recommendations |
+| `analytics` | `dict` | No | Analytics data and customer behavior insights |
+| `data` | `dict` | Yes | The data to be validated |
+| `enableAI` | `bool` | No | Enable AI-powered analysis |
+| `marketingInsights` | `dict` | No | Marketing-related insights |
+| `status` | `str` | No | Validation status |
+| `timestamp` | `str` | No | Timestamp of the validation |
 | `validationResults` | `dict` | No |  |
-| `validationType` | `str` | No |  |
+| `validationType` | `str` | No | Type of validation to perform |
 
 ### Operations
 

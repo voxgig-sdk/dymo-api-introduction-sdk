@@ -91,15 +91,15 @@ local security = client:Security(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `aiInsights` | `table` | No |  |
-| `analytics` | `table` | No |  |
-| `data` | `table` | Yes |  |
-| `enableAI` | `boolean` | No |  |
-| `marketingInsights` | `table` | No |  |
-| `status` | `string` | No |  |
-| `timestamp` | `string` | No |  |
+| `aiInsights` | `table` | No | AI-powered insights and recommendations |
+| `analytics` | `table` | No | Analytics data and customer behavior insights |
+| `data` | `table` | Yes | The data to be validated |
+| `enableAI` | `boolean` | No | Enable AI-powered analysis |
+| `marketingInsights` | `table` | No | Marketing-related insights |
+| `status` | `string` | No | Validation status |
+| `timestamp` | `string` | No | Timestamp of the validation |
 | `validationResults` | `table` | No |  |
-| `validationType` | `string` | No |  |
+| `validationType` | `string` | No | Type of validation to perform |
 
 ### Operations
 

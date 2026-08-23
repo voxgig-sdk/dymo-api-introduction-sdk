@@ -93,15 +93,15 @@ $security = $client->Security();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `aiInsights` | `array` | No |  |
-| `analytics` | `array` | No |  |
-| `data` | `array` | Yes |  |
-| `enableAI` | `bool` | No |  |
-| `marketingInsights` | `array` | No |  |
-| `status` | `string` | No |  |
-| `timestamp` | `string` | No |  |
+| `aiInsights` | `array` | No | AI-powered insights and recommendations |
+| `analytics` | `array` | No | Analytics data and customer behavior insights |
+| `data` | `array` | Yes | The data to be validated |
+| `enableAI` | `bool` | No | Enable AI-powered analysis |
+| `marketingInsights` | `array` | No | Marketing-related insights |
+| `status` | `string` | No | Validation status |
+| `timestamp` | `string` | No | Timestamp of the validation |
 | `validationResults` | `array` | No |  |
-| `validationType` | `string` | No |  |
+| `validationType` | `string` | No | Type of validation to perform |
 
 ### Operations
 
