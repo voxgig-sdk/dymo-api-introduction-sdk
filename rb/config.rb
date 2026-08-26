@@ -28,6 +28,7 @@ module DymoApiIntroductionConfig
           "options" => {
             "active" => false,
           },
+          "transport" => "base",
         },
       },
       "options" => {
